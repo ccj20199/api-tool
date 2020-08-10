@@ -1,0 +1,3 @@
+[lf-1][SERVER_NAME_IS_UNDEFINED][2020-08-10 14:58:18.382][WARN ][http-nio-8888-exec-4][GlobalExceptionHandler.java:123] - 参数校验异常:API标识不为空(apiId)
+[lf-1][SERVER_NAME_IS_UNDEFINED][2020-08-10 15:10:37.193][WARN ][http-nio-8888-exec-4][GlobalExceptionHandler.java:123] - 参数校验异常:API标识不为空(apiId)
+[lf-1][SERVER_NAME_IS_UNDEFINED][2020-08-10 15:11:16.375][WARN ][http-nio-8888-exec-10][GlobalExceptionHandler.java:123] - 参数校验异常:API标识不为空(apiId)
