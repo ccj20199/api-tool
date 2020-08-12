@@ -5,6 +5,7 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.util.List;
 
@@ -53,7 +54,7 @@ public class NewHangUpInputVO {
     @ApiModelProperty(value = "是否分页代码",required = true,position = 80)
     private Long allowPageCode;
 
-
+    @NotEmpty(message = "创建人不为空")
     @ApiModelProperty(value = "创建人",position = 90)
     private String createBy;
 

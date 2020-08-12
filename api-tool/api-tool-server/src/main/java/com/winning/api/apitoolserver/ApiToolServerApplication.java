@@ -13,7 +13,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EntityScan(basePackages = {"com.winning.api.apitoolentity"})
 @EnableJpaRepositories(basePackages = {"com.winning.api.apitooldao"})
 public class ApiToolServerApplication {
-
+    
     public static void main(String[] args) {
         SpringApplication.run(ApiToolServerApplication.class, args);
     }

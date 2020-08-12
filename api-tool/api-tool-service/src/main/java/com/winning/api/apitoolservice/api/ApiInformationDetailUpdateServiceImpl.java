@@ -92,6 +92,7 @@ public class ApiInformationDetailUpdateServiceImpl {
         saveParameter(apiUpdateId, inputVO.getOutputParameterList(),0L, ParameterType.OUT_PARAMETER.getCode());
 
         outVO.setApiUpdateId(apiUpdateId);
+        outVO.setApiNo(apiNo);
 
         // 更新 仓库表中的 currApiNo+1
         String currApiNo=codeRepositoryInformationPO.getCurrApiNo();

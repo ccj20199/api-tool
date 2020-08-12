@@ -17,4 +17,7 @@ public class NewHangUpOutVO {
 
     @ApiModelProperty(value = "API修改标识",required = true,position = 10)
     private Long apiUpdateId;
+
+    @ApiModelProperty(value = "API编号",required = true,position = 20)
+    private String apiNo;
 }

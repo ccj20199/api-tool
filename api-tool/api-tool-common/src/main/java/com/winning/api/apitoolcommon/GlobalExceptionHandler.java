@@ -121,6 +121,6 @@ public class GlobalExceptionHandler {
     public ResponseResult handleBindException(MethodArgumentNotValidException ex) {
         FieldError fieldError = ex.getBindingResult().getFieldError();
         log.warn("参数校验异常:{}({})", fieldError.getDefaultMessage(),fieldError.getField());
-        return ResponseResult.error(ResultCode.BODY_NOT_MATCH.getCode(),fieldError,ResultCode.BODY_NOT_MATCH.getMsg());
+        return ResponseResult.error(ResultCode.BODY_NOT_MATCH.getCode(),fieldError,fieldError.getDefaultMessage());
     }
 }

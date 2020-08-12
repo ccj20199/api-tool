@@ -43,11 +43,13 @@ public class ApiExportController {
 
          List<CodeRepositoryIdOutVO> codeRepositoryIdOutVOS=  apiExportService.exportByCodeRepositoryId(inputVO.getCodeRepositoryId());
 
+
          String  name=apiExportService.repositoryNameById(inputVO.getCodeRepositoryId());
          Map<String,Object> map= Maps.newHashMap();
 
         map.put("codeRepositoryIdOutVOS",codeRepositoryIdOutVOS);
-        WordUtil.createWord(map,"codeRepositoryId.ftl",upload+name+".doc");
+       // WordUtil.createWord(map,"codeRepositoryId.ftl",upload+name+".doc");
+        WordUtil.createWord(map,"5.ftl",upload+name+".doc");
         WordUtil.downLoadFile(request,upload+name+".doc",response);
         // 删除文件
         WordUtil.DeleteFolder(upload+name+".doc");
