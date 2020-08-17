@@ -24,8 +24,6 @@ public class AddInputVO {
     @NotNull(message = "仓库架构类别代码不能空")
     private Long repositoryArchitectTypeCode;
 
-    @ApiModelProperty(value = "仓库业务类别代码",position = 20)
-    private Long repositoryBusinessTypeCode;
 
     @ApiModelProperty(value = "仓库名称",required = true,position = 30)
     @NotBlank(message = "仓库名称不能空")
@@ -61,10 +59,6 @@ public class AddInputVO {
     @ApiModelProperty(value = "说明",position = 110)
     private String memo;
 
-    @ApiModelProperty(value = "当前API编号",required = true,position = 120)
-    @NotBlank(message = "当前API编号不能空")
-    @Pattern(regexp="^[0-9]*$",message = "api编号需要是数字类型的字符串")
-    private String currApiNo;
 
     @ApiModelProperty(value = "业务域标识",required = true,position = 130)
     @NotNull(message = "业务域标识不能空")

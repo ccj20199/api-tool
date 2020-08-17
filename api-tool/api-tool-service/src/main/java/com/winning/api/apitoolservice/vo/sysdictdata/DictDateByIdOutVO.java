@@ -18,5 +18,5 @@ import java.util.List;
 public class DictDateByIdOutVO {
 
     @ApiModelProperty(value = "字典数据列表",position = 10)
-    private List<com.winning.api.apitoolservice.vo.sysdictdata.DictData> data;
+    private List<DictData> data;
 }

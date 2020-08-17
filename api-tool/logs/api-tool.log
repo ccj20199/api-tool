@@ -1,39 +1,126 @@
-2020-08-12 09:18:08.104 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 55 ] - Starting ApiToolServerApplication on LAPTOP-S5OMFD0A with PID 24504 (E:\api-work\api-model\api-tool\api-tool\api-tool-server\target\classes started by cq in E:\api-work\api-model\api-tool\api-tool)
-2020-08-12 09:18:08.158 [ restartedMain ] - [ DEBUG ] [ c.w.api.apitoolserver.ApiToolServerApplication : 56 ] - Running with Spring Boot v2.3.2.RELEASE, Spring v5.2.8.RELEASE
-2020-08-12 09:18:08.167 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 651 ] - No active profile set, falling back to default profiles: default
-2020-08-12 09:18:12.395 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Initializing ProtocolHandler ["http-nio-8888"]
-2020-08-12 09:18:12.396 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardService : 173 ] - Starting service [Tomcat]
-2020-08-12 09:18:12.397 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardEngine : 173 ] - Starting Servlet engine: [Apache Tomcat/9.0.37]
-2020-08-12 09:18:12.560 [ restartedMain ] - [ INFO  ] [ o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] : 173 ] - Initializing Spring embedded WebApplicationContext
-2020-08-12 09:18:12.901 [ restartedMain ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 930 ] - {dataSource-1} inited
-2020-08-12 09:18:13.435 [ restartedMain ] - [ INFO  ] [ org.hibernate.jpa.internal.util.LogHelper : 31 ] - HHH000204: Processing PersistenceUnitInfo [name: default]
-2020-08-12 09:18:13.533 [ restartedMain ] - [ INFO  ] [ org.hibernate.Version : 44 ] - HHH000412: Hibernate ORM core version 5.4.18.Final
-2020-08-12 09:18:13.794 [ restartedMain ] - [ INFO  ] [ org.hibernate.annotations.common.Version : 49 ] - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-08-12 09:18:14.243 [ restartedMain ] - [ INFO  ] [ org.hibernate.dialect.Dialect : 172 ] - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
-2020-08-12 09:18:17.382 [ restartedMain ] - [ INFO  ] [ o.h.e.t.jta.platform.internal.JtaPlatformInitiator : 52 ] - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-08-12 09:18:19.380 [ restartedMain ] - [ INFO  ] [ s.d.s.w.PropertySourcedRequestMappingHandlerMapping : 69 ] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2020-08-12 09:18:19.893 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Starting ProtocolHandler ["http-nio-8888"]
-2020-08-12 09:18:20.304 [ restartedMain ] - [ INFO  ] [ s.d.s.web.plugins.DocumentationPluginsBootstrapper : 160 ] - Context refreshed
-2020-08-12 09:18:20.366 [ restartedMain ] - [ INFO  ] [ s.d.s.web.plugins.DocumentationPluginsBootstrapper : 163 ] - Found 1 custom documentation plugin(s)
-2020-08-12 09:18:20.452 [ restartedMain ] - [ INFO  ] [ s.d.spring.web.scanners.ApiListingReferenceScanner : 41 ] - Scanning for api listing references
-2020-08-12 09:18:20.975 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 61 ] - Started ApiToolServerApplication in 13.829 seconds (JVM running for 16.334)
-2020-08-12 09:24:57.117 [ http-nio-8888-exec-1 ] - [ INFO  ] [ o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] : 173 ] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-08-12 09:25:06.983 [ http-nio-8888-exec-7 ] - [ ERROR ] [ c.winning.api.apitoolcommon.GlobalExceptionHandler : 33 ] - ********************Throw BusinessException.url:http://localhost:8888/api/apiTool/apiInformationDetailUpdate/hangUp ERROR:当前分组没有所属仓库！********************
-com.winning.api.apitoolcommon.BusinessException: 当前分组没有所属仓库！
-	at com.winning.api.apitoolservice.api.ApiInformationDetailUpdateServiceImpl.getCodeRepositoryInformationPO(ApiInformationDetailUpdateServiceImpl.java:114)
-	at com.winning.api.apitoolservice.api.ApiInformationDetailUpdateServiceImpl.hangUp(ApiInformationDetailUpdateServiceImpl.java:72)
-	at com.winning.api.apitoolservice.api.ApiInformationDetailUpdateServiceImpl$$FastClassBySpringCGLIB$$de19fd69.invoke(<generated>)
-	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:771)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
-	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:367)
-	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:118)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
-	at com.winning.api.apitoolservice.api.ApiInformationDetailUpdateServiceImpl$$EnhancerBySpringCGLIB$$2d54a1c2.hangUp(<generated>)
-	at com.winning.api.apitoolweb.controller.InformationManagementController.apiInformationDetailUpdateHangUp(InformationManagementController.java:53)
+2020-08-14 14:06:09.800 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 55 ] - Starting ApiToolServerApplication on LAPTOP-S5OMFD0A with PID 14960 (E:\api-work\api-model\api-tool\api-tool\api-tool-server\target\classes started by cq in E:\api-work\api-model\api-tool\api-tool)
+2020-08-14 14:06:09.844 [ restartedMain ] - [ DEBUG ] [ c.w.api.apitoolserver.ApiToolServerApplication : 56 ] - Running with Spring Boot v2.3.2.RELEASE, Spring v5.2.8.RELEASE
+2020-08-14 14:06:09.873 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 651 ] - No active profile set, falling back to default profiles: default
+2020-08-14 14:06:14.257 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Initializing ProtocolHandler ["http-nio-8888"]
+2020-08-14 14:06:14.258 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardService : 173 ] - Starting service [Tomcat]
+2020-08-14 14:06:14.259 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardEngine : 173 ] - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-14 14:06:14.527 [ restartedMain ] - [ INFO  ] [ o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] : 173 ] - Initializing Spring embedded WebApplicationContext
+2020-08-14 14:06:14.925 [ restartedMain ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 930 ] - {dataSource-1} inited
+2020-08-14 14:06:16.867 [ restartedMain ] - [ INFO  ] [ org.hibernate.jpa.internal.util.LogHelper : 31 ] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-14 14:06:16.958 [ restartedMain ] - [ INFO  ] [ org.hibernate.Version : 44 ] - HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-14 14:06:17.166 [ restartedMain ] - [ INFO  ] [ org.hibernate.annotations.common.Version : 49 ] - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-14 14:06:17.382 [ restartedMain ] - [ INFO  ] [ org.hibernate.dialect.Dialect : 172 ] - HHH000400: Using dialect: org.hibernate.dialect.SQLServer2008Dialect
+2020-08-14 14:06:18.717 [ restartedMain ] - [ INFO  ] [ o.h.e.t.jta.platform.internal.JtaPlatformInitiator : 52 ] - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-14 14:06:20.112 [ restartedMain ] - [ INFO  ] [ s.d.s.w.PropertySourcedRequestMappingHandlerMapping : 69 ] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-08-14 14:06:20.752 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Starting ProtocolHandler ["http-nio-8888"]
+2020-08-14 14:06:20.782 [ restartedMain ] - [ INFO  ] [ s.d.s.web.plugins.DocumentationPluginsBootstrapper : 160 ] - Context refreshed
+2020-08-14 14:06:20.809 [ restartedMain ] - [ INFO  ] [ s.d.s.web.plugins.DocumentationPluginsBootstrapper : 163 ] - Found 1 custom documentation plugin(s)
+2020-08-14 14:06:20.850 [ restartedMain ] - [ INFO  ] [ s.d.spring.web.scanners.ApiListingReferenceScanner : 41 ] - Scanning for api listing references
+2020-08-14 14:06:21.113 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 61 ] - Started ApiToolServerApplication in 12.115 seconds (JVM running for 15.01)
+2020-08-14 14:07:14.894 [ http-nio-8888-exec-1 ] - [ INFO  ] [ o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] : 173 ] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-14 15:02:24.354 [ SpringContextShutdownHook ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 1825 ] - {dataSource-1} closed
+2020-08-14 15:02:40.534 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 55 ] - Starting ApiToolServerApplication on LAPTOP-S5OMFD0A with PID 17680 (E:\api-work\api-model\api-tool\api-tool\api-tool-server\target\classes started by cq in E:\api-work\api-model\api-tool\api-tool)
+2020-08-14 15:02:40.542 [ restartedMain ] - [ DEBUG ] [ c.w.api.apitoolserver.ApiToolServerApplication : 56 ] - Running with Spring Boot v2.3.2.RELEASE, Spring v5.2.8.RELEASE
+2020-08-14 15:02:40.543 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 651 ] - No active profile set, falling back to default profiles: default
+2020-08-14 15:02:43.453 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Initializing ProtocolHandler ["http-nio-8888"]
+2020-08-14 15:02:43.455 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardService : 173 ] - Starting service [Tomcat]
+2020-08-14 15:02:43.456 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardEngine : 173 ] - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-14 15:02:43.637 [ restartedMain ] - [ INFO  ] [ o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] : 173 ] - Initializing Spring embedded WebApplicationContext
+2020-08-14 15:02:43.933 [ restartedMain ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 930 ] - {dataSource-1} inited
+2020-08-14 15:02:45.383 [ restartedMain ] - [ INFO  ] [ org.hibernate.jpa.internal.util.LogHelper : 31 ] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-14 15:02:45.457 [ restartedMain ] - [ INFO  ] [ org.hibernate.Version : 44 ] - HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-14 15:02:45.621 [ restartedMain ] - [ INFO  ] [ org.hibernate.annotations.common.Version : 49 ] - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-14 15:02:45.807 [ restartedMain ] - [ INFO  ] [ org.hibernate.dialect.Dialect : 172 ] - HHH000400: Using dialect: org.hibernate.dialect.SQLServer2008Dialect
+2020-08-14 15:02:47.139 [ restartedMain ] - [ INFO  ] [ o.h.e.t.jta.platform.internal.JtaPlatformInitiator : 52 ] - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-14 15:02:48.472 [ restartedMain ] - [ INFO  ] [ s.d.s.w.PropertySourcedRequestMappingHandlerMapping : 69 ] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-08-14 15:02:49.189 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Starting ProtocolHandler ["http-nio-8888"]
+2020-08-14 15:02:49.223 [ restartedMain ] - [ INFO  ] [ s.d.s.web.plugins.DocumentationPluginsBootstrapper : 160 ] - Context refreshed
+2020-08-14 15:02:49.257 [ restartedMain ] - [ INFO  ] [ s.d.s.web.plugins.DocumentationPluginsBootstrapper : 163 ] - Found 1 custom documentation plugin(s)
+2020-08-14 15:02:49.306 [ restartedMain ] - [ INFO  ] [ s.d.spring.web.scanners.ApiListingReferenceScanner : 41 ] - Scanning for api listing references
+2020-08-14 15:02:49.648 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 61 ] - Started ApiToolServerApplication in 10.156 seconds (JVM running for 12.769)
+2020-08-14 15:03:39.188 [ http-nio-8888-exec-1 ] - [ INFO  ] [ o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] : 173 ] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-14 15:20:18.768 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 55 ] - Starting ApiToolServerApplication on LAPTOP-S5OMFD0A with PID 23220 (E:\api-work\api-model\api-tool\api-tool\api-tool-server\target\classes started by cq in E:\api-work\api-model\api-tool\api-tool)
+2020-08-14 15:20:18.777 [ restartedMain ] - [ DEBUG ] [ c.w.api.apitoolserver.ApiToolServerApplication : 56 ] - Running with Spring Boot v2.3.2.RELEASE, Spring v5.2.8.RELEASE
+2020-08-14 15:20:18.782 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 651 ] - No active profile set, falling back to default profiles: default
+2020-08-14 15:20:21.478 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Initializing ProtocolHandler ["http-nio-8888"]
+2020-08-14 15:20:21.479 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardService : 173 ] - Starting service [Tomcat]
+2020-08-14 15:20:21.479 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardEngine : 173 ] - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-14 15:20:21.647 [ restartedMain ] - [ INFO  ] [ o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] : 173 ] - Initializing Spring embedded WebApplicationContext
+2020-08-14 15:20:21.973 [ restartedMain ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 930 ] - {dataSource-1} inited
+2020-08-14 15:20:23.450 [ restartedMain ] - [ INFO  ] [ org.hibernate.jpa.internal.util.LogHelper : 31 ] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-14 15:20:23.530 [ restartedMain ] - [ INFO  ] [ org.hibernate.Version : 44 ] - HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-14 15:20:23.731 [ restartedMain ] - [ INFO  ] [ org.hibernate.annotations.common.Version : 49 ] - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-14 15:20:23.964 [ restartedMain ] - [ INFO  ] [ org.hibernate.dialect.Dialect : 172 ] - HHH000400: Using dialect: org.hibernate.dialect.SQLServer2008Dialect
+2020-08-14 15:20:25.191 [ restartedMain ] - [ INFO  ] [ o.h.e.t.jta.platform.internal.JtaPlatformInitiator : 52 ] - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-14 15:20:26.562 [ restartedMain ] - [ INFO  ] [ s.d.s.w.PropertySourcedRequestMappingHandlerMapping : 69 ] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-08-14 15:20:27.330 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Starting ProtocolHandler ["http-nio-8888"]
+2020-08-14 15:20:27.363 [ restartedMain ] - [ INFO  ] [ s.d.s.web.plugins.DocumentationPluginsBootstrapper : 160 ] - Context refreshed
+2020-08-14 15:20:27.392 [ restartedMain ] - [ INFO  ] [ s.d.s.web.plugins.DocumentationPluginsBootstrapper : 163 ] - Found 1 custom documentation plugin(s)
+2020-08-14 15:20:27.434 [ restartedMain ] - [ INFO  ] [ s.d.spring.web.scanners.ApiListingReferenceScanner : 41 ] - Scanning for api listing references
+2020-08-14 15:20:27.719 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 61 ] - Started ApiToolServerApplication in 10.006 seconds (JVM running for 13.974)
+2020-08-14 15:21:10.115 [ http-nio-8888-exec-1 ] - [ INFO  ] [ o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] : 173 ] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-14 15:21:10.832 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 43 ] - 【createWord】：==>方法进入
+2020-08-14 15:21:10.832 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 44 ] - 【fileFullPath】：==>E:/word/仓库名称1.doc
+2020-08-14 15:21:10.833 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 45 ] - 【templateName】：==>6.ftl
+2020-08-14 15:21:10.951 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 50 ] - 【创建配置实例】：==>
+2020-08-14 15:21:10.951 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 54 ] - 【设置编码】：==>
+2020-08-14 15:21:11.381 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 105 ] - 【downLoadFile:fullPath】：==>E:/word/仓库名称1.doc
+2020-08-14 15:23:33.427 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 55 ] - Starting ApiToolServerApplication on LAPTOP-S5OMFD0A with PID 7932 (E:\api-work\api-model\api-tool\api-tool\api-tool-server\target\classes started by cq in E:\api-work\api-model\api-tool\api-tool)
+2020-08-14 15:23:33.442 [ restartedMain ] - [ DEBUG ] [ c.w.api.apitoolserver.ApiToolServerApplication : 56 ] - Running with Spring Boot v2.3.2.RELEASE, Spring v5.2.8.RELEASE
+2020-08-14 15:23:33.443 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 651 ] - No active profile set, falling back to default profiles: default
+2020-08-14 15:23:36.639 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Initializing ProtocolHandler ["http-nio-8888"]
+2020-08-14 15:23:36.640 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardService : 173 ] - Starting service [Tomcat]
+2020-08-14 15:23:36.641 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardEngine : 173 ] - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-14 15:23:36.872 [ restartedMain ] - [ INFO  ] [ o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] : 173 ] - Initializing Spring embedded WebApplicationContext
+2020-08-14 15:23:37.537 [ restartedMain ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 930 ] - {dataSource-1} inited
+2020-08-14 15:23:40.434 [ restartedMain ] - [ INFO  ] [ org.hibernate.jpa.internal.util.LogHelper : 31 ] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-14 15:23:40.642 [ restartedMain ] - [ INFO  ] [ org.hibernate.Version : 44 ] - HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-14 15:23:41.045 [ restartedMain ] - [ INFO  ] [ org.hibernate.annotations.common.Version : 49 ] - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-14 15:23:41.414 [ restartedMain ] - [ INFO  ] [ org.hibernate.dialect.Dialect : 172 ] - HHH000400: Using dialect: org.hibernate.dialect.SQLServer2008Dialect
+2020-08-14 15:23:42.642 [ restartedMain ] - [ INFO  ] [ o.h.e.t.jta.platform.internal.JtaPlatformInitiator : 52 ] - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-14 15:23:43.782 [ restartedMain ] - [ INFO  ] [ s.d.s.w.PropertySourcedRequestMappingHandlerMapping : 69 ] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-08-14 15:23:44.393 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Starting ProtocolHandler ["http-nio-8888"]
+2020-08-14 15:23:44.422 [ restartedMain ] - [ INFO  ] [ s.d.s.web.plugins.DocumentationPluginsBootstrapper : 160 ] - Context refreshed
+2020-08-14 15:23:44.447 [ restartedMain ] - [ INFO  ] [ s.d.s.web.plugins.DocumentationPluginsBootstrapper : 163 ] - Found 1 custom documentation plugin(s)
+2020-08-14 15:23:44.486 [ restartedMain ] - [ INFO  ] [ s.d.spring.web.scanners.ApiListingReferenceScanner : 41 ] - Scanning for api listing references
+2020-08-14 15:23:44.746 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 61 ] - Started ApiToolServerApplication in 12.427 seconds (JVM running for 15.309)
+2020-08-14 15:24:08.072 [ http-nio-8888-exec-1 ] - [ INFO  ] [ o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] : 173 ] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-14 15:24:08.750 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 43 ] - 【createWord】：==>方法进入
+2020-08-14 15:24:08.750 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 44 ] - 【fileFullPath】：==>E:/word/仓库名称1.doc
+2020-08-14 15:24:08.750 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 45 ] - 【templateName】：==>6.ftl
+2020-08-14 15:24:08.837 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 50 ] - 【创建配置实例】：==>
+2020-08-14 15:24:08.838 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 54 ] - 【设置编码】：==>
+2020-08-14 15:24:09.140 [ http-nio-8888-exec-1 ] - [ ERROR ] [ freemarker.runtime : 60 ] - Error executing FreeMarker template
+freemarker.core.InvalidReferenceException: The following has evaluated to null or missing:
+==> groupInfos  [in template "6.ftl" at line 2589, column 24]
+
+----
+Tip: If the failing expression is known to legally refer to something that's sometimes null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
+----
+
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: #if groupInfos?size gt 0  [in template "6.ftl" in macro "groupInfoTree" at line 2589, column 17]
+	- Reached through: @groupInfoTree groupInfos=dto  [in template "6.ftl" at line 3903, column 13]
+----
+	at freemarker.core.InvalidReferenceException.getInstance(InvalidReferenceException.java:134)
+	at freemarker.core.UnexpectedTypeException.newDescriptionBuilder(UnexpectedTypeException.java:85)
+	at freemarker.core.UnexpectedTypeException.<init>(UnexpectedTypeException.java:48)
+	at freemarker.core.BuiltInsForMultipleTypes$sizeBI._eval(BuiltInsForMultipleTypes.java:534)
+	at freemarker.core.Expression.eval(Expression.java:101)
+	at freemarker.core.EvalUtil.compare(EvalUtil.java:113)
+	at freemarker.core.ComparisonExpression.evalToBoolean(ComparisonExpression.java:78)
+	at freemarker.core.ConditionalBlock.accept(ConditionalBlock.java:48)
+	at freemarker.core.Environment.visit(Environment.java:370)
+	at freemarker.core.Environment.invokeMacroOrFunctionCommonPart(Environment.java:876)
+	at freemarker.core.Environment.invokeMacro(Environment.java:812)
+	at freemarker.core.UnifiedCall.accept(UnifiedCall.java:84)
+	at freemarker.core.Environment.visit(Environment.java:334)
+	at freemarker.core.Environment.visit(Environment.java:340)
+	at freemarker.core.Environment.process(Environment.java:313)
+	at freemarker.template.Template.process(Template.java:383)
+	at com.winning.api.apitoolcommon.WordUtil.createWord(WordUtil.java:83)
+	at com.winning.api.apitoolweb.controller.ApiExportController.exportByCodeRepositoryId(ApiExportController.java:57)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -84,23 +171,180 @@ com.winning.api.apitoolcommon.BusinessException: 当前分组没有所属仓库�
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:748)
-2020-08-12 09:25:11.716 [ http-nio-8888-exec-8 ] - [ WARN  ] [ org.hibernate.engine.jdbc.spi.SqlExceptionHelper : 137 ] - SQL Error: 1048, SQLState: 23000
-2020-08-12 09:25:11.719 [ http-nio-8888-exec-8 ] - [ ERROR ] [ org.hibernate.engine.jdbc.spi.SqlExceptionHelper : 142 ] - Column 'CREATE_BY' cannot be null
-2020-08-12 09:25:11.778 [ http-nio-8888-exec-8 ] - [ ERROR ] [ c.winning.api.apitoolcommon.GlobalExceptionHandler : 42 ] - ********************Throw Exception.url:http://localhost:8888/api/apiTool/apiInformationDetailUpdate/hangUp ERROR:could not execute statement; SQL [n/a]; constraint [null]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement********************
-org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint [null]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement
-	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:298)
-	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:255)
-	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:538)
-	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:743)
-	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:711)
-	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:633)
-	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:386)
-	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:118)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
-	at com.winning.api.apitoolservice.api.ApiInformationDetailUpdateServiceImpl$$EnhancerBySpringCGLIB$$2d54a1c2.hangUp(<generated>)
-	at com.winning.api.apitoolweb.controller.InformationManagementController.apiInformationDetailUpdateHangUp(InformationManagementController.java:53)
+2020-08-14 15:24:09.153 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 91 ] - 【生成word文件出错】：==>The following has evaluated to null or missing:
+==> groupInfos  [in template "6.ftl" at line 2589, column 24]
+
+----
+Tip: If the failing expression is known to legally refer to something that's sometimes null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
+----
+
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: #if groupInfos?size gt 0  [in template "6.ftl" in macro "groupInfoTree" at line 2589, column 17]
+	- Reached through: @groupInfoTree groupInfos=dto  [in template "6.ftl" at line 3903, column 13]
+----
+2020-08-14 15:24:09.253 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 105 ] - 【downLoadFile:fullPath】：==>E:/word/仓库名称1.doc
+2020-08-14 15:27:17.991 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 55 ] - Starting ApiToolServerApplication on LAPTOP-S5OMFD0A with PID 21600 (E:\api-work\api-model\api-tool\api-tool\api-tool-server\target\classes started by cq in E:\api-work\api-model\api-tool\api-tool)
+2020-08-14 15:27:17.998 [ restartedMain ] - [ DEBUG ] [ c.w.api.apitoolserver.ApiToolServerApplication : 56 ] - Running with Spring Boot v2.3.2.RELEASE, Spring v5.2.8.RELEASE
+2020-08-14 15:27:18.001 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 651 ] - No active profile set, falling back to default profiles: default
+2020-08-14 15:27:20.347 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Initializing ProtocolHandler ["http-nio-8888"]
+2020-08-14 15:27:20.348 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardService : 173 ] - Starting service [Tomcat]
+2020-08-14 15:27:20.349 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardEngine : 173 ] - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-14 15:27:20.513 [ restartedMain ] - [ INFO  ] [ o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] : 173 ] - Initializing Spring embedded WebApplicationContext
+2020-08-14 15:27:20.844 [ restartedMain ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 930 ] - {dataSource-1} inited
+2020-08-14 15:27:22.428 [ restartedMain ] - [ INFO  ] [ org.hibernate.jpa.internal.util.LogHelper : 31 ] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-14 15:27:22.506 [ restartedMain ] - [ INFO  ] [ org.hibernate.Version : 44 ] - HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-14 15:27:22.668 [ restartedMain ] - [ INFO  ] [ org.hibernate.annotations.common.Version : 49 ] - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-14 15:27:22.848 [ restartedMain ] - [ INFO  ] [ org.hibernate.dialect.Dialect : 172 ] - HHH000400: Using dialect: org.hibernate.dialect.SQLServer2008Dialect
+2020-08-14 15:27:24.045 [ restartedMain ] - [ INFO  ] [ o.h.e.t.jta.platform.internal.JtaPlatformInitiator : 52 ] - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-14 15:27:25.187 [ restartedMain ] - [ INFO  ] [ s.d.s.w.PropertySourcedRequestMappingHandlerMapping : 69 ] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-08-14 15:27:25.781 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Starting ProtocolHandler ["http-nio-8888"]
+2020-08-14 15:27:25.810 [ restartedMain ] - [ INFO  ] [ s.d.s.web.plugins.DocumentationPluginsBootstrapper : 160 ] - Context refreshed
+2020-08-14 15:27:25.836 [ restartedMain ] - [ INFO  ] [ s.d.s.web.plugins.DocumentationPluginsBootstrapper : 163 ] - Found 1 custom documentation plugin(s)
+2020-08-14 15:27:25.876 [ restartedMain ] - [ INFO  ] [ s.d.spring.web.scanners.ApiListingReferenceScanner : 41 ] - Scanning for api listing references
+2020-08-14 15:27:26.135 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 61 ] - Started ApiToolServerApplication in 9.131 seconds (JVM running for 11.53)
+2020-08-14 15:27:32.447 [ http-nio-8888-exec-1 ] - [ INFO  ] [ o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] : 173 ] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-14 15:27:33.326 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 43 ] - 【createWord】：==>方法进入
+2020-08-14 15:27:33.327 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 44 ] - 【fileFullPath】：==>E:/word/仓库名称1.doc
+2020-08-14 15:27:33.328 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 45 ] - 【templateName】：==>6.ftl
+2020-08-14 15:27:33.440 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 50 ] - 【创建配置实例】：==>
+2020-08-14 15:27:33.440 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 54 ] - 【设置编码】：==>
+2020-08-14 15:27:33.728 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 105 ] - 【downLoadFile:fullPath】：==>E:/word/仓库名称1.doc
+2020-08-14 15:28:20.547 [ SpringContextShutdownHook ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 1825 ] - {dataSource-1} closed
+2020-08-14 15:28:29.041 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 55 ] - Starting ApiToolServerApplication on LAPTOP-S5OMFD0A with PID 13908 (E:\api-work\api-model\api-tool\api-tool\api-tool-server\target\classes started by cq in E:\api-work\api-model\api-tool\api-tool)
+2020-08-14 15:28:29.046 [ restartedMain ] - [ DEBUG ] [ c.w.api.apitoolserver.ApiToolServerApplication : 56 ] - Running with Spring Boot v2.3.2.RELEASE, Spring v5.2.8.RELEASE
+2020-08-14 15:28:29.048 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 651 ] - No active profile set, falling back to default profiles: default
+2020-08-14 15:28:32.269 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Initializing ProtocolHandler ["http-nio-8888"]
+2020-08-14 15:28:32.270 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardService : 173 ] - Starting service [Tomcat]
+2020-08-14 15:28:32.271 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardEngine : 173 ] - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-14 15:28:32.445 [ restartedMain ] - [ INFO  ] [ o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] : 173 ] - Initializing Spring embedded WebApplicationContext
+2020-08-14 15:28:32.748 [ restartedMain ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 930 ] - {dataSource-1} inited
+2020-08-14 15:28:34.992 [ restartedMain ] - [ INFO  ] [ org.hibernate.jpa.internal.util.LogHelper : 31 ] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-14 15:28:35.069 [ restartedMain ] - [ INFO  ] [ org.hibernate.Version : 44 ] - HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-14 15:28:35.250 [ restartedMain ] - [ INFO  ] [ org.hibernate.annotations.common.Version : 49 ] - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-14 15:28:35.448 [ restartedMain ] - [ INFO  ] [ org.hibernate.dialect.Dialect : 172 ] - HHH000400: Using dialect: org.hibernate.dialect.SQLServer2008Dialect
+2020-08-14 15:28:36.779 [ restartedMain ] - [ INFO  ] [ o.h.e.t.jta.platform.internal.JtaPlatformInitiator : 52 ] - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-14 15:28:38.108 [ restartedMain ] - [ INFO  ] [ s.d.s.w.PropertySourcedRequestMappingHandlerMapping : 69 ] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-08-14 15:28:38.924 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Starting ProtocolHandler ["http-nio-8888"]
+2020-08-14 15:28:38.954 [ restartedMain ] - [ INFO  ] [ s.d.s.web.plugins.DocumentationPluginsBootstrapper : 160 ] - Context refreshed
+2020-08-14 15:28:38.979 [ restartedMain ] - [ INFO  ] [ s.d.s.web.plugins.DocumentationPluginsBootstrapper : 163 ] - Found 1 custom documentation plugin(s)
+2020-08-14 15:28:39.019 [ restartedMain ] - [ INFO  ] [ s.d.spring.web.scanners.ApiListingReferenceScanner : 41 ] - Scanning for api listing references
+2020-08-14 15:28:39.463 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 61 ] - Started ApiToolServerApplication in 11.683 seconds (JVM running for 14.638)
+2020-08-14 15:28:41.875 [ http-nio-8888-exec-1 ] - [ INFO  ] [ o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] : 173 ] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-14 15:28:42.809 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 43 ] - 【createWord】：==>方法进入
+2020-08-14 15:28:42.809 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 44 ] - 【fileFullPath】：==>E:/word/仓库名称1.doc
+2020-08-14 15:28:42.810 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 45 ] - 【templateName】：==>6.ftl
+2020-08-14 15:28:43.096 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 50 ] - 【创建配置实例】：==>
+2020-08-14 15:28:43.097 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 54 ] - 【设置编码】：==>
+2020-08-14 15:28:43.627 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 105 ] - 【downLoadFile:fullPath】：==>E:/word/仓库名称1.doc
+2020-08-14 15:30:12.488 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 55 ] - Starting ApiToolServerApplication on LAPTOP-S5OMFD0A with PID 11744 (E:\api-work\api-model\api-tool\api-tool\api-tool-server\target\classes started by cq in E:\api-work\api-model\api-tool\api-tool)
+2020-08-14 15:30:12.494 [ restartedMain ] - [ DEBUG ] [ c.w.api.apitoolserver.ApiToolServerApplication : 56 ] - Running with Spring Boot v2.3.2.RELEASE, Spring v5.2.8.RELEASE
+2020-08-14 15:30:12.495 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 651 ] - No active profile set, falling back to default profiles: default
+2020-08-14 15:30:15.491 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Initializing ProtocolHandler ["http-nio-8888"]
+2020-08-14 15:30:15.492 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardService : 173 ] - Starting service [Tomcat]
+2020-08-14 15:30:15.492 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardEngine : 173 ] - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-14 15:30:15.653 [ restartedMain ] - [ INFO  ] [ o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] : 173 ] - Initializing Spring embedded WebApplicationContext
+2020-08-14 15:30:16.063 [ restartedMain ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 930 ] - {dataSource-1} inited
+2020-08-14 15:30:17.684 [ restartedMain ] - [ INFO  ] [ org.hibernate.jpa.internal.util.LogHelper : 31 ] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-14 15:30:17.769 [ restartedMain ] - [ INFO  ] [ org.hibernate.Version : 44 ] - HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-14 15:30:17.979 [ restartedMain ] - [ INFO  ] [ org.hibernate.annotations.common.Version : 49 ] - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-14 15:30:18.264 [ restartedMain ] - [ INFO  ] [ org.hibernate.dialect.Dialect : 172 ] - HHH000400: Using dialect: org.hibernate.dialect.SQLServer2008Dialect
+2020-08-14 15:30:19.786 [ restartedMain ] - [ INFO  ] [ o.h.e.t.jta.platform.internal.JtaPlatformInitiator : 52 ] - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-14 15:30:21.202 [ restartedMain ] - [ INFO  ] [ s.d.s.w.PropertySourcedRequestMappingHandlerMapping : 69 ] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-08-14 15:30:22.159 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Starting ProtocolHandler ["http-nio-8888"]
+2020-08-14 15:30:22.214 [ restartedMain ] - [ INFO  ] [ s.d.s.web.plugins.DocumentationPluginsBootstrapper : 160 ] - Context refreshed
+2020-08-14 15:30:22.267 [ restartedMain ] - [ INFO  ] [ s.d.s.web.plugins.DocumentationPluginsBootstrapper : 163 ] - Found 1 custom documentation plugin(s)
+2020-08-14 15:30:22.353 [ restartedMain ] - [ INFO  ] [ s.d.spring.web.scanners.ApiListingReferenceScanner : 41 ] - Scanning for api listing references
+2020-08-14 15:30:22.829 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 61 ] - Started ApiToolServerApplication in 11.887 seconds (JVM running for 15.106)
+2020-08-14 15:31:16.280 [ http-nio-8888-exec-1 ] - [ INFO  ] [ o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] : 173 ] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-14 15:31:17.004 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 43 ] - 【createWord】：==>方法进入
+2020-08-14 15:31:17.004 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 44 ] - 【fileFullPath】：==>E:/word/仓库名称1.doc
+2020-08-14 15:31:17.004 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 45 ] - 【templateName】：==>6.ftl
+2020-08-14 15:31:17.087 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 50 ] - 【创建配置实例】：==>
+2020-08-14 15:31:17.088 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 54 ] - 【设置编码】：==>
+2020-08-14 15:31:17.092 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 91 ] - 【生成word文件出错】：==>E:\word\仓库名称1.doc (另一个程序正在使用此文件，进程无法访问。)
+2020-08-14 15:31:17.093 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 105 ] - 【downLoadFile:fullPath】：==>E:/word/仓库名称1.doc
+2020-08-14 15:31:31.094 [ http-nio-8888-exec-2 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 43 ] - 【createWord】：==>方法进入
+2020-08-14 15:31:31.095 [ http-nio-8888-exec-2 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 44 ] - 【fileFullPath】：==>E:/word/仓库名称1.doc
+2020-08-14 15:31:31.096 [ http-nio-8888-exec-2 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 45 ] - 【templateName】：==>6.ftl
+2020-08-14 15:31:31.097 [ http-nio-8888-exec-2 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 50 ] - 【创建配置实例】：==>
+2020-08-14 15:31:31.097 [ http-nio-8888-exec-2 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 54 ] - 【设置编码】：==>
+2020-08-14 15:31:31.468 [ http-nio-8888-exec-2 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 105 ] - 【downLoadFile:fullPath】：==>E:/word/仓库名称1.doc
+2020-08-14 15:34:02.310 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 55 ] - Starting ApiToolServerApplication on LAPTOP-S5OMFD0A with PID 29116 (E:\api-work\api-model\api-tool\api-tool\api-tool-server\target\classes started by cq in E:\api-work\api-model\api-tool\api-tool)
+2020-08-14 15:34:02.317 [ restartedMain ] - [ DEBUG ] [ c.w.api.apitoolserver.ApiToolServerApplication : 56 ] - Running with Spring Boot v2.3.2.RELEASE, Spring v5.2.8.RELEASE
+2020-08-14 15:34:02.319 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 651 ] - No active profile set, falling back to default profiles: default
+2020-08-14 15:34:06.059 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Initializing ProtocolHandler ["http-nio-8888"]
+2020-08-14 15:34:06.060 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardService : 173 ] - Starting service [Tomcat]
+2020-08-14 15:34:06.061 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardEngine : 173 ] - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-14 15:34:06.283 [ restartedMain ] - [ INFO  ] [ o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] : 173 ] - Initializing Spring embedded WebApplicationContext
+2020-08-14 15:34:06.678 [ restartedMain ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 930 ] - {dataSource-1} inited
+2020-08-14 15:34:08.211 [ restartedMain ] - [ INFO  ] [ org.hibernate.jpa.internal.util.LogHelper : 31 ] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-14 15:34:08.284 [ restartedMain ] - [ INFO  ] [ org.hibernate.Version : 44 ] - HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-14 15:34:08.456 [ restartedMain ] - [ INFO  ] [ org.hibernate.annotations.common.Version : 49 ] - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-14 15:34:08.646 [ restartedMain ] - [ INFO  ] [ org.hibernate.dialect.Dialect : 172 ] - HHH000400: Using dialect: org.hibernate.dialect.SQLServer2008Dialect
+2020-08-14 15:34:09.966 [ restartedMain ] - [ INFO  ] [ o.h.e.t.jta.platform.internal.JtaPlatformInitiator : 52 ] - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-14 15:34:11.651 [ restartedMain ] - [ INFO  ] [ s.d.s.w.PropertySourcedRequestMappingHandlerMapping : 69 ] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-08-14 15:34:12.497 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Starting ProtocolHandler ["http-nio-8888"]
+2020-08-14 15:34:12.543 [ restartedMain ] - [ INFO  ] [ s.d.s.web.plugins.DocumentationPluginsBootstrapper : 160 ] - Context refreshed
+2020-08-14 15:34:12.583 [ restartedMain ] - [ INFO  ] [ s.d.s.web.plugins.DocumentationPluginsBootstrapper : 163 ] - Found 1 custom documentation plugin(s)
+2020-08-14 15:34:12.645 [ restartedMain ] - [ INFO  ] [ s.d.spring.web.scanners.ApiListingReferenceScanner : 41 ] - Scanning for api listing references
+2020-08-14 15:34:13.021 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 61 ] - Started ApiToolServerApplication in 12.006 seconds (JVM running for 15.964)
+2020-08-14 15:34:52.922 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 55 ] - Starting ApiToolServerApplication on LAPTOP-S5OMFD0A with PID 28108 (E:\api-work\api-model\api-tool\api-tool\api-tool-server\target\classes started by cq in E:\api-work\api-model\api-tool\api-tool)
+2020-08-14 15:34:52.932 [ restartedMain ] - [ DEBUG ] [ c.w.api.apitoolserver.ApiToolServerApplication : 56 ] - Running with Spring Boot v2.3.2.RELEASE, Spring v5.2.8.RELEASE
+2020-08-14 15:34:52.933 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 651 ] - No active profile set, falling back to default profiles: default
+2020-08-14 15:34:55.719 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Initializing ProtocolHandler ["http-nio-8888"]
+2020-08-14 15:34:55.721 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardService : 173 ] - Starting service [Tomcat]
+2020-08-14 15:34:55.721 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardEngine : 173 ] - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-14 15:34:55.941 [ restartedMain ] - [ INFO  ] [ o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] : 173 ] - Initializing Spring embedded WebApplicationContext
+2020-08-14 15:34:56.355 [ restartedMain ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 930 ] - {dataSource-1} inited
+2020-08-14 15:34:57.866 [ restartedMain ] - [ INFO  ] [ org.hibernate.jpa.internal.util.LogHelper : 31 ] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-14 15:34:57.943 [ restartedMain ] - [ INFO  ] [ org.hibernate.Version : 44 ] - HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-14 15:34:58.162 [ restartedMain ] - [ INFO  ] [ org.hibernate.annotations.common.Version : 49 ] - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-14 15:34:58.361 [ restartedMain ] - [ INFO  ] [ org.hibernate.dialect.Dialect : 172 ] - HHH000400: Using dialect: org.hibernate.dialect.SQLServer2008Dialect
+2020-08-14 15:34:59.761 [ restartedMain ] - [ INFO  ] [ o.h.e.t.jta.platform.internal.JtaPlatformInitiator : 52 ] - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-14 15:35:01.169 [ restartedMain ] - [ INFO  ] [ s.d.s.w.PropertySourcedRequestMappingHandlerMapping : 69 ] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-08-14 15:35:01.950 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Starting ProtocolHandler ["http-nio-8888"]
+2020-08-14 15:35:01.984 [ restartedMain ] - [ INFO  ] [ s.d.s.web.plugins.DocumentationPluginsBootstrapper : 160 ] - Context refreshed
+2020-08-14 15:35:02.013 [ restartedMain ] - [ INFO  ] [ s.d.s.web.plugins.DocumentationPluginsBootstrapper : 163 ] - Found 1 custom documentation plugin(s)
+2020-08-14 15:35:02.060 [ restartedMain ] - [ INFO  ] [ s.d.spring.web.scanners.ApiListingReferenceScanner : 41 ] - Scanning for api listing references
+2020-08-14 15:35:02.350 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 61 ] - Started ApiToolServerApplication in 10.617 seconds (JVM running for 14.205)
+2020-08-14 15:35:12.137 [ http-nio-8888-exec-1 ] - [ INFO  ] [ o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] : 173 ] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-14 15:35:12.877 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 43 ] - 【createWord】：==>方法进入
+2020-08-14 15:35:12.877 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 44 ] - 【fileFullPath】：==>E:/word/仓库名称1.doc
+2020-08-14 15:35:12.878 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 45 ] - 【templateName】：==>6.ftl
+2020-08-14 15:35:12.976 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 50 ] - 【创建配置实例】：==>
+2020-08-14 15:35:12.977 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 54 ] - 【设置编码】：==>
+2020-08-14 15:35:13.292 [ http-nio-8888-exec-1 ] - [ ERROR ] [ freemarker.runtime : 60 ] - Error executing FreeMarker template
+freemarker.core.NonHashException: For "." left-hand operand: Expected a hash, but this has evaluated to a sequence (wrapper: f.t.SimpleSequence):
+==> groupInfos  [in template "6.ftl" at line 2593, column 43]
+
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: ${groupInfos.titleType}  [in template "6.ftl" in macro "groupInfoTree" at line 2593, column 41]
+	- Reached through: @groupInfoTree groupInfos=dto  [in template "6.ftl" at line 3903, column 13]
+----
+	at freemarker.core.Dot._eval(Dot.java:48)
+	at freemarker.core.Expression.eval(Expression.java:101)
+	at freemarker.core.DollarVariable.calculateInterpolatedStringOrMarkup(DollarVariable.java:100)
+	at freemarker.core.DollarVariable.accept(DollarVariable.java:63)
+	at freemarker.core.Environment.visit(Environment.java:370)
+	at freemarker.core.IteratorBlock$IterationContext.executedNestedContentForCollOrSeqListing(IteratorBlock.java:321)
+	at freemarker.core.IteratorBlock$IterationContext.executeNestedContent(IteratorBlock.java:271)
+	at freemarker.core.IteratorBlock$IterationContext.accept(IteratorBlock.java:244)
+	at freemarker.core.Environment.visitIteratorBlock(Environment.java:644)
+	at freemarker.core.IteratorBlock.acceptWithResult(IteratorBlock.java:108)
+	at freemarker.core.IteratorBlock.accept(IteratorBlock.java:94)
+	at freemarker.core.Environment.visit(Environment.java:334)
+	at freemarker.core.Environment.visit(Environment.java:376)
+	at freemarker.core.Environment.invokeMacroOrFunctionCommonPart(Environment.java:876)
+	at freemarker.core.Environment.invokeMacro(Environment.java:812)
+	at freemarker.core.UnifiedCall.accept(UnifiedCall.java:84)
+	at freemarker.core.Environment.visit(Environment.java:334)
+	at freemarker.core.Environment.visit(Environment.java:340)
+	at freemarker.core.Environment.process(Environment.java:313)
+	at freemarker.template.Template.process(Template.java:383)
+	at com.winning.api.apitoolcommon.WordUtil.createWord(WordUtil.java:83)
+	at com.winning.api.apitoolweb.controller.ApiExportController.exportByCodeRepositoryId(ApiExportController.java:57)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -151,173 +395,486 @@ org.springframework.dao.DataIntegrityViolationException: could not execute state
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:748)
-Caused by: org.hibernate.exception.ConstraintViolationException: could not execute statement
-	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:59)
-	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:42)
-	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:113)
-	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:99)
-	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:200)
-	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3254)
-	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3779)
-	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:107)
-	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:604)
-	at org.hibernate.engine.spi.ActionQueue.lambda$executeActions$1(ActionQueue.java:478)
-	at java.util.LinkedHashMap.forEach(LinkedHashMap.java:684)
-	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:475)
-	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:348)
-	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:40)
-	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:102)
-	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1360)
-	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:451)
-	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:3210)
-	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2378)
-	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:447)
-	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:183)
-	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$300(JdbcResourceLocalTransactionCoordinatorImpl.java:40)
-	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:281)
-	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101)
-	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:534)
-	... 60 common frames omitted
-Caused by: java.sql.SQLIntegrityConstraintViolationException: Column 'CREATE_BY' cannot be null
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
-	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
-	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
-	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1092)
-	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1040)
-	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1340)
-	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1025)
-	at com.alibaba.druid.pool.DruidPooledPreparedStatement.executeUpdate(DruidPooledPreparedStatement.java:256)
-	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:197)
-	... 80 common frames omitted
-2020-08-12 09:27:03.368 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 55 ] - Starting ApiToolServerApplication on LAPTOP-S5OMFD0A with PID 24336 (E:\api-work\api-model\api-tool\api-tool\api-tool-server\target\classes started by cq in E:\api-work\api-model\api-tool\api-tool)
-2020-08-12 09:27:03.374 [ restartedMain ] - [ DEBUG ] [ c.w.api.apitoolserver.ApiToolServerApplication : 56 ] - Running with Spring Boot v2.3.2.RELEASE, Spring v5.2.8.RELEASE
-2020-08-12 09:27:03.375 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 651 ] - No active profile set, falling back to default profiles: default
-2020-08-12 09:27:05.609 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Initializing ProtocolHandler ["http-nio-8888"]
-2020-08-12 09:27:05.610 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardService : 173 ] - Starting service [Tomcat]
-2020-08-12 09:27:05.611 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardEngine : 173 ] - Starting Servlet engine: [Apache Tomcat/9.0.37]
-2020-08-12 09:27:05.767 [ restartedMain ] - [ INFO  ] [ o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] : 173 ] - Initializing Spring embedded WebApplicationContext
-2020-08-12 09:27:06.109 [ restartedMain ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 930 ] - {dataSource-1} inited
-2020-08-12 09:27:06.560 [ restartedMain ] - [ INFO  ] [ org.hibernate.jpa.internal.util.LogHelper : 31 ] - HHH000204: Processing PersistenceUnitInfo [name: default]
-2020-08-12 09:27:06.634 [ restartedMain ] - [ INFO  ] [ org.hibernate.Version : 44 ] - HHH000412: Hibernate ORM core version 5.4.18.Final
-2020-08-12 09:27:06.797 [ restartedMain ] - [ INFO  ] [ org.hibernate.annotations.common.Version : 49 ] - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-08-12 09:27:06.978 [ restartedMain ] - [ INFO  ] [ org.hibernate.dialect.Dialect : 172 ] - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
-2020-08-12 09:27:08.026 [ restartedMain ] - [ INFO  ] [ o.h.e.t.jta.platform.internal.JtaPlatformInitiator : 52 ] - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-08-12 09:27:09.222 [ restartedMain ] - [ INFO  ] [ s.d.s.w.PropertySourcedRequestMappingHandlerMapping : 69 ] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2020-08-12 09:27:09.621 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Starting ProtocolHandler ["http-nio-8888"]
-2020-08-12 09:27:09.879 [ restartedMain ] - [ INFO  ] [ s.d.s.web.plugins.DocumentationPluginsBootstrapper : 160 ] - Context refreshed
-2020-08-12 09:27:09.907 [ restartedMain ] - [ INFO  ] [ s.d.s.web.plugins.DocumentationPluginsBootstrapper : 163 ] - Found 1 custom documentation plugin(s)
-2020-08-12 09:27:09.954 [ restartedMain ] - [ INFO  ] [ s.d.spring.web.scanners.ApiListingReferenceScanner : 41 ] - Scanning for api listing references
-2020-08-12 09:27:10.246 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 61 ] - Started ApiToolServerApplication in 7.864 seconds (JVM running for 10.678)
-2020-08-12 09:30:22.778 [ http-nio-8888-exec-1 ] - [ INFO  ] [ o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] : 173 ] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-08-12 09:31:18.518 [ Thread-17 ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 1825 ] - {dataSource-1} closed
-2020-08-12 09:31:18.900 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 55 ] - Starting ApiToolServerApplication on LAPTOP-S5OMFD0A with PID 24336 (E:\api-work\api-model\api-tool\api-tool\api-tool-server\target\classes started by cq in E:\api-work\api-model\api-tool\api-tool)
-2020-08-12 09:31:18.900 [ restartedMain ] - [ DEBUG ] [ c.w.api.apitoolserver.ApiToolServerApplication : 56 ] - Running with Spring Boot v2.3.2.RELEASE, Spring v5.2.8.RELEASE
-2020-08-12 09:31:18.900 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 651 ] - No active profile set, falling back to default profiles: default
-2020-08-12 09:31:22.643 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 55 ] - Starting ApiToolServerApplication on LAPTOP-S5OMFD0A with PID 24336 (E:\api-work\api-model\api-tool\api-tool\api-tool-server\target\classes started by cq in E:\api-work\api-model\api-tool\api-tool)
-2020-08-12 09:31:22.645 [ restartedMain ] - [ DEBUG ] [ c.w.api.apitoolserver.ApiToolServerApplication : 56 ] - Running with Spring Boot v2.3.2.RELEASE, Spring v5.2.8.RELEASE
-2020-08-12 09:31:22.646 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 651 ] - No active profile set, falling back to default profiles: default
-2020-08-12 09:31:23.752 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Initializing ProtocolHandler ["http-nio-8888"]
-2020-08-12 09:31:23.753 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardService : 173 ] - Starting service [Tomcat]
-2020-08-12 09:31:23.753 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardEngine : 173 ] - Starting Servlet engine: [Apache Tomcat/9.0.37]
-2020-08-12 09:31:23.802 [ restartedMain ] - [ INFO  ] [ o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] : 173 ] - Initializing Spring embedded WebApplicationContext
-2020-08-12 09:31:23.894 [ restartedMain ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 930 ] - {dataSource-2} inited
-2020-08-12 09:31:24.119 [ restartedMain ] - [ INFO  ] [ org.hibernate.jpa.internal.util.LogHelper : 31 ] - HHH000204: Processing PersistenceUnitInfo [name: default]
-2020-08-12 09:31:24.131 [ restartedMain ] - [ INFO  ] [ org.hibernate.dialect.Dialect : 172 ] - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
-2020-08-12 09:31:24.277 [ restartedMain ] - [ INFO  ] [ o.h.e.t.jta.platform.internal.JtaPlatformInitiator : 52 ] - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-08-12 09:31:24.459 [ restartedMain ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 1825 ] - {dataSource-2} closed
-2020-08-12 09:31:24.460 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardService : 173 ] - Stopping service [Tomcat]
-2020-08-12 09:31:27.118 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 55 ] - Starting ApiToolServerApplication on LAPTOP-S5OMFD0A with PID 24336 (E:\api-work\api-model\api-tool\api-tool\api-tool-server\target\classes started by cq in E:\api-work\api-model\api-tool\api-tool)
-2020-08-12 09:31:27.118 [ restartedMain ] - [ DEBUG ] [ c.w.api.apitoolserver.ApiToolServerApplication : 56 ] - Running with Spring Boot v2.3.2.RELEASE, Spring v5.2.8.RELEASE
-2020-08-12 09:31:27.119 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 651 ] - No active profile set, falling back to default profiles: default
-2020-08-12 09:31:28.022 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Initializing ProtocolHandler ["http-nio-8888"]
-2020-08-12 09:31:28.022 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardService : 173 ] - Starting service [Tomcat]
-2020-08-12 09:31:28.022 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardEngine : 173 ] - Starting Servlet engine: [Apache Tomcat/9.0.37]
-2020-08-12 09:31:28.080 [ restartedMain ] - [ INFO  ] [ o.a.c.c.C.[Tomcat-1].[localhost].[/api] : 173 ] - Initializing Spring embedded WebApplicationContext
-2020-08-12 09:31:28.172 [ restartedMain ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 930 ] - {dataSource-3} inited
-2020-08-12 09:31:28.382 [ restartedMain ] - [ INFO  ] [ org.hibernate.jpa.internal.util.LogHelper : 31 ] - HHH000204: Processing PersistenceUnitInfo [name: default]
-2020-08-12 09:31:28.398 [ restartedMain ] - [ INFO  ] [ org.hibernate.dialect.Dialect : 172 ] - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
-2020-08-12 09:31:28.576 [ restartedMain ] - [ INFO  ] [ o.h.e.t.jta.platform.internal.JtaPlatformInitiator : 52 ] - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-08-12 09:31:28.587 [ restartedMain ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 1825 ] - {dataSource-3} closed
-2020-08-12 09:31:28.588 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardService : 173 ] - Stopping service [Tomcat]
-2020-08-12 09:31:32.532 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 55 ] - Starting ApiToolServerApplication on LAPTOP-S5OMFD0A with PID 24336 (E:\api-work\api-model\api-tool\api-tool\api-tool-server\target\classes started by cq in E:\api-work\api-model\api-tool\api-tool)
-2020-08-12 09:31:32.532 [ restartedMain ] - [ DEBUG ] [ c.w.api.apitoolserver.ApiToolServerApplication : 56 ] - Running with Spring Boot v2.3.2.RELEASE, Spring v5.2.8.RELEASE
-2020-08-12 09:31:32.532 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 651 ] - No active profile set, falling back to default profiles: default
-2020-08-12 09:31:33.565 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Initializing ProtocolHandler ["http-nio-8888"]
-2020-08-12 09:31:33.566 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardService : 173 ] - Starting service [Tomcat]
-2020-08-12 09:31:33.566 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardEngine : 173 ] - Starting Servlet engine: [Apache Tomcat/9.0.37]
-2020-08-12 09:31:33.607 [ restartedMain ] - [ INFO  ] [ o.a.c.c.C.[Tomcat-2].[localhost].[/api] : 173 ] - Initializing Spring embedded WebApplicationContext
-2020-08-12 09:31:33.677 [ restartedMain ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 930 ] - {dataSource-4} inited
-2020-08-12 09:31:33.889 [ restartedMain ] - [ INFO  ] [ org.hibernate.jpa.internal.util.LogHelper : 31 ] - HHH000204: Processing PersistenceUnitInfo [name: default]
-2020-08-12 09:31:33.901 [ restartedMain ] - [ INFO  ] [ org.hibernate.dialect.Dialect : 172 ] - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
-2020-08-12 09:31:34.071 [ restartedMain ] - [ INFO  ] [ o.h.e.t.jta.platform.internal.JtaPlatformInitiator : 52 ] - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-08-12 09:31:34.579 [ restartedMain ] - [ INFO  ] [ s.d.s.w.PropertySourcedRequestMappingHandlerMapping : 69 ] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2020-08-12 09:31:34.775 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Starting ProtocolHandler ["http-nio-8888"]
-2020-08-12 09:31:34.780 [ restartedMain ] - [ INFO  ] [ s.d.s.web.plugins.DocumentationPluginsBootstrapper : 160 ] - Context refreshed
-2020-08-12 09:31:34.782 [ restartedMain ] - [ INFO  ] [ s.d.s.web.plugins.DocumentationPluginsBootstrapper : 163 ] - Found 1 custom documentation plugin(s)
-2020-08-12 09:31:34.790 [ restartedMain ] - [ INFO  ] [ s.d.spring.web.scanners.ApiListingReferenceScanner : 41 ] - Scanning for api listing references
-2020-08-12 09:31:34.799 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 61 ] - Started ApiToolServerApplication in 2.372 seconds (JVM running for 275.23)
-2020-08-12 09:31:37.300 [ Thread-26 ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 1825 ] - {dataSource-4} closed
-2020-08-12 09:31:37.641 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 55 ] - Starting ApiToolServerApplication on LAPTOP-S5OMFD0A with PID 24336 (E:\api-work\api-model\api-tool\api-tool\api-tool-server\target\classes started by cq in E:\api-work\api-model\api-tool\api-tool)
-2020-08-12 09:31:37.641 [ restartedMain ] - [ DEBUG ] [ c.w.api.apitoolserver.ApiToolServerApplication : 56 ] - Running with Spring Boot v2.3.2.RELEASE, Spring v5.2.8.RELEASE
-2020-08-12 09:31:37.642 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 651 ] - No active profile set, falling back to default profiles: default
-2020-08-12 09:31:38.433 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Initializing ProtocolHandler ["http-nio-8888"]
-2020-08-12 09:31:38.434 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardService : 173 ] - Starting service [Tomcat]
-2020-08-12 09:31:38.434 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardEngine : 173 ] - Starting Servlet engine: [Apache Tomcat/9.0.37]
-2020-08-12 09:31:38.467 [ restartedMain ] - [ INFO  ] [ o.a.c.c.C.[Tomcat-2].[localhost].[/api] : 173 ] - Initializing Spring embedded WebApplicationContext
-2020-08-12 09:31:38.519 [ restartedMain ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 930 ] - {dataSource-5} inited
-2020-08-12 09:31:38.760 [ restartedMain ] - [ INFO  ] [ org.hibernate.jpa.internal.util.LogHelper : 31 ] - HHH000204: Processing PersistenceUnitInfo [name: default]
-2020-08-12 09:31:38.774 [ restartedMain ] - [ INFO  ] [ org.hibernate.dialect.Dialect : 172 ] - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
-2020-08-12 09:31:38.871 [ restartedMain ] - [ INFO  ] [ o.h.e.t.jta.platform.internal.JtaPlatformInitiator : 52 ] - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-08-12 09:31:39.236 [ restartedMain ] - [ INFO  ] [ s.d.s.w.PropertySourcedRequestMappingHandlerMapping : 69 ] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2020-08-12 09:31:39.392 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Starting ProtocolHandler ["http-nio-8888"]
-2020-08-12 09:31:39.396 [ restartedMain ] - [ INFO  ] [ s.d.s.web.plugins.DocumentationPluginsBootstrapper : 160 ] - Context refreshed
-2020-08-12 09:31:39.397 [ restartedMain ] - [ INFO  ] [ s.d.s.web.plugins.DocumentationPluginsBootstrapper : 163 ] - Found 1 custom documentation plugin(s)
-2020-08-12 09:31:39.403 [ restartedMain ] - [ INFO  ] [ s.d.spring.web.scanners.ApiListingReferenceScanner : 41 ] - Scanning for api listing references
-2020-08-12 09:31:39.471 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 61 ] - Started ApiToolServerApplication in 1.951 seconds (JVM running for 279.902)
-2020-08-12 09:59:38.932 [ SpringContextShutdownHook ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 1825 ] - {dataSource-5} closed
-2020-08-12 10:00:01.397 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 55 ] - Starting ApiToolServerApplication on LAPTOP-S5OMFD0A with PID 10756 (E:\api-work\api-model\api-tool\api-tool\api-tool-server\target\classes started by cq in E:\api-work\api-model\api-tool\api-tool)
-2020-08-12 10:00:01.405 [ restartedMain ] - [ DEBUG ] [ c.w.api.apitoolserver.ApiToolServerApplication : 56 ] - Running with Spring Boot v2.3.2.RELEASE, Spring v5.2.8.RELEASE
-2020-08-12 10:00:01.406 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 651 ] - No active profile set, falling back to default profiles: default
-2020-08-12 10:00:04.624 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Initializing ProtocolHandler ["http-nio-8888"]
-2020-08-12 10:00:04.625 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardService : 173 ] - Starting service [Tomcat]
-2020-08-12 10:00:04.626 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardEngine : 173 ] - Starting Servlet engine: [Apache Tomcat/9.0.37]
-2020-08-12 10:00:04.931 [ restartedMain ] - [ INFO  ] [ o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] : 173 ] - Initializing Spring embedded WebApplicationContext
-2020-08-12 10:00:05.465 [ restartedMain ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 930 ] - {dataSource-1} inited
-2020-08-12 10:00:05.871 [ restartedMain ] - [ INFO  ] [ org.hibernate.jpa.internal.util.LogHelper : 31 ] - HHH000204: Processing PersistenceUnitInfo [name: default]
-2020-08-12 10:00:05.967 [ restartedMain ] - [ INFO  ] [ org.hibernate.Version : 44 ] - HHH000412: Hibernate ORM core version 5.4.18.Final
-2020-08-12 10:00:06.220 [ restartedMain ] - [ INFO  ] [ org.hibernate.annotations.common.Version : 49 ] - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-08-12 10:00:06.535 [ restartedMain ] - [ INFO  ] [ org.hibernate.dialect.Dialect : 172 ] - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
-2020-08-12 10:00:08.419 [ restartedMain ] - [ INFO  ] [ o.h.e.t.jta.platform.internal.JtaPlatformInitiator : 52 ] - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-08-12 10:00:09.866 [ restartedMain ] - [ INFO  ] [ s.d.s.w.PropertySourcedRequestMappingHandlerMapping : 69 ] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2020-08-12 10:00:10.301 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Starting ProtocolHandler ["http-nio-8888"]
-2020-08-12 10:00:10.555 [ restartedMain ] - [ INFO  ] [ s.d.s.web.plugins.DocumentationPluginsBootstrapper : 160 ] - Context refreshed
-2020-08-12 10:00:10.592 [ restartedMain ] - [ INFO  ] [ s.d.s.web.plugins.DocumentationPluginsBootstrapper : 163 ] - Found 1 custom documentation plugin(s)
-2020-08-12 10:00:10.649 [ restartedMain ] - [ INFO  ] [ s.d.spring.web.scanners.ApiListingReferenceScanner : 41 ] - Scanning for api listing references
-2020-08-12 10:00:10.961 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 61 ] - Started ApiToolServerApplication in 11.027 seconds (JVM running for 13.983)
-2020-08-12 13:47:32.899 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 55 ] - Starting ApiToolServerApplication on LAPTOP-S5OMFD0A with PID 21252 (E:\api-work\api-model\api-tool\api-tool\api-tool-server\target\classes started by cq in E:\api-work\api-model\api-tool\api-tool)
-2020-08-12 13:47:32.903 [ restartedMain ] - [ DEBUG ] [ c.w.api.apitoolserver.ApiToolServerApplication : 56 ] - Running with Spring Boot v2.3.2.RELEASE, Spring v5.2.8.RELEASE
-2020-08-12 13:47:32.904 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 651 ] - No active profile set, falling back to default profiles: default
-2020-08-12 13:47:35.064 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Initializing ProtocolHandler ["http-nio-8888"]
-2020-08-12 13:47:35.065 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardService : 173 ] - Starting service [Tomcat]
-2020-08-12 13:47:35.065 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardEngine : 173 ] - Starting Servlet engine: [Apache Tomcat/9.0.37]
-2020-08-12 13:47:35.223 [ restartedMain ] - [ INFO  ] [ o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] : 173 ] - Initializing Spring embedded WebApplicationContext
-2020-08-12 13:47:35.539 [ restartedMain ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 930 ] - {dataSource-1} inited
-2020-08-12 13:47:35.862 [ restartedMain ] - [ INFO  ] [ org.hibernate.jpa.internal.util.LogHelper : 31 ] - HHH000204: Processing PersistenceUnitInfo [name: default]
-2020-08-12 13:47:35.941 [ restartedMain ] - [ INFO  ] [ org.hibernate.Version : 44 ] - HHH000412: Hibernate ORM core version 5.4.18.Final
-2020-08-12 13:47:36.104 [ restartedMain ] - [ INFO  ] [ org.hibernate.annotations.common.Version : 49 ] - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-08-12 13:47:36.300 [ restartedMain ] - [ INFO  ] [ org.hibernate.dialect.Dialect : 172 ] - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
-2020-08-12 13:47:37.324 [ restartedMain ] - [ INFO  ] [ o.h.e.t.jta.platform.internal.JtaPlatformInitiator : 52 ] - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-08-12 13:47:38.584 [ restartedMain ] - [ INFO  ] [ s.d.s.w.PropertySourcedRequestMappingHandlerMapping : 69 ] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2020-08-12 13:47:38.984 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Starting ProtocolHandler ["http-nio-8888"]
-2020-08-12 13:47:39.251 [ restartedMain ] - [ INFO  ] [ s.d.s.web.plugins.DocumentationPluginsBootstrapper : 160 ] - Context refreshed
-2020-08-12 13:47:39.276 [ restartedMain ] - [ INFO  ] [ s.d.s.web.plugins.DocumentationPluginsBootstrapper : 163 ] - Found 1 custom documentation plugin(s)
-2020-08-12 13:47:39.322 [ restartedMain ] - [ INFO  ] [ s.d.spring.web.scanners.ApiListingReferenceScanner : 41 ] - Scanning for api listing references
-2020-08-12 13:47:39.587 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 61 ] - Started ApiToolServerApplication in 7.55 seconds (JVM running for 10.44)
-2020-08-12 13:48:09.630 [ http-nio-8888-exec-2 ] - [ INFO  ] [ o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] : 173 ] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-08-12 13:48:10.150 [ http-nio-8888-exec-2 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 43 ] - 【createWord】：==>方法进入
-2020-08-12 13:48:10.150 [ http-nio-8888-exec-2 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 44 ] - 【fileFullPath】：==>E:/word/仓库名称1.doc
-2020-08-12 13:48:10.150 [ http-nio-8888-exec-2 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 45 ] - 【templateName】：==>5.ftl
-2020-08-12 13:48:10.255 [ http-nio-8888-exec-2 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 50 ] - 【创建配置实例】：==>
-2020-08-12 13:48:10.256 [ http-nio-8888-exec-2 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 54 ] - 【设置编码】：==>
-2020-08-12 13:48:10.577 [ http-nio-8888-exec-2 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 105 ] - 【downLoadFile:fullPath】：==>E:/word/仓库名称1.doc
+2020-08-14 15:35:13.297 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 91 ] - 【生成word文件出错】：==>For "." left-hand operand: Expected a hash, but this has evaluated to a sequence (wrapper: f.t.SimpleSequence):
+==> groupInfos  [in template "6.ftl" at line 2593, column 43]
+
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: ${groupInfos.titleType}  [in template "6.ftl" in macro "groupInfoTree" at line 2593, column 41]
+	- Reached through: @groupInfoTree groupInfos=dto  [in template "6.ftl" at line 3903, column 13]
+----
+2020-08-14 15:35:13.299 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 105 ] - 【downLoadFile:fullPath】：==>E:/word/仓库名称1.doc
+2020-08-14 15:36:16.999 [ SpringContextShutdownHook ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 1825 ] - {dataSource-1} closed
+2020-08-14 15:36:24.449 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 55 ] - Starting ApiToolServerApplication on LAPTOP-S5OMFD0A with PID 22020 (E:\api-work\api-model\api-tool\api-tool\api-tool-server\target\classes started by cq in E:\api-work\api-model\api-tool\api-tool)
+2020-08-14 15:36:24.456 [ restartedMain ] - [ DEBUG ] [ c.w.api.apitoolserver.ApiToolServerApplication : 56 ] - Running with Spring Boot v2.3.2.RELEASE, Spring v5.2.8.RELEASE
+2020-08-14 15:36:24.457 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 651 ] - No active profile set, falling back to default profiles: default
+2020-08-14 15:36:27.113 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Initializing ProtocolHandler ["http-nio-8888"]
+2020-08-14 15:36:27.114 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardService : 173 ] - Starting service [Tomcat]
+2020-08-14 15:36:27.114 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardEngine : 173 ] - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-14 15:36:27.273 [ restartedMain ] - [ INFO  ] [ o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] : 173 ] - Initializing Spring embedded WebApplicationContext
+2020-08-14 15:36:27.569 [ restartedMain ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 930 ] - {dataSource-1} inited
+2020-08-14 15:36:28.995 [ restartedMain ] - [ INFO  ] [ org.hibernate.jpa.internal.util.LogHelper : 31 ] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-14 15:36:29.069 [ restartedMain ] - [ INFO  ] [ org.hibernate.Version : 44 ] - HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-14 15:36:29.249 [ restartedMain ] - [ INFO  ] [ org.hibernate.annotations.common.Version : 49 ] - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-14 15:36:29.497 [ restartedMain ] - [ INFO  ] [ org.hibernate.dialect.Dialect : 172 ] - HHH000400: Using dialect: org.hibernate.dialect.SQLServer2008Dialect
+2020-08-14 15:36:30.738 [ restartedMain ] - [ INFO  ] [ o.h.e.t.jta.platform.internal.JtaPlatformInitiator : 52 ] - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-14 15:36:31.946 [ restartedMain ] - [ INFO  ] [ s.d.s.w.PropertySourcedRequestMappingHandlerMapping : 69 ] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-08-14 15:36:32.625 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Starting ProtocolHandler ["http-nio-8888"]
+2020-08-14 15:36:32.654 [ restartedMain ] - [ INFO  ] [ s.d.s.web.plugins.DocumentationPluginsBootstrapper : 160 ] - Context refreshed
+2020-08-14 15:36:32.682 [ restartedMain ] - [ INFO  ] [ s.d.s.web.plugins.DocumentationPluginsBootstrapper : 163 ] - Found 1 custom documentation plugin(s)
+2020-08-14 15:36:32.731 [ restartedMain ] - [ INFO  ] [ s.d.spring.web.scanners.ApiListingReferenceScanner : 41 ] - Scanning for api listing references
+2020-08-14 15:36:33.020 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 61 ] - Started ApiToolServerApplication in 9.599 seconds (JVM running for 12.54)
+2020-08-14 15:36:41.472 [ http-nio-8888-exec-1 ] - [ INFO  ] [ o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] : 173 ] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-14 15:36:42.358 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 43 ] - 【createWord】：==>方法进入
+2020-08-14 15:36:42.358 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 44 ] - 【fileFullPath】：==>E:/word/仓库名称1.doc
+2020-08-14 15:36:42.359 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 45 ] - 【templateName】：==>6.ftl
+2020-08-14 15:36:42.488 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 50 ] - 【创建配置实例】：==>
+2020-08-14 15:36:42.489 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 54 ] - 【设置编码】：==>
+2020-08-14 15:36:42.899 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 105 ] - 【downLoadFile:fullPath】：==>E:/word/仓库名称1.doc
+2020-08-14 15:39:19.007 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 55 ] - Starting ApiToolServerApplication on LAPTOP-S5OMFD0A with PID 20096 (E:\api-work\api-model\api-tool\api-tool\api-tool-server\target\classes started by cq in E:\api-work\api-model\api-tool\api-tool)
+2020-08-14 15:39:19.017 [ restartedMain ] - [ DEBUG ] [ c.w.api.apitoolserver.ApiToolServerApplication : 56 ] - Running with Spring Boot v2.3.2.RELEASE, Spring v5.2.8.RELEASE
+2020-08-14 15:39:19.018 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 651 ] - No active profile set, falling back to default profiles: default
+2020-08-14 15:39:21.990 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Initializing ProtocolHandler ["http-nio-8888"]
+2020-08-14 15:39:21.991 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardService : 173 ] - Starting service [Tomcat]
+2020-08-14 15:39:21.992 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardEngine : 173 ] - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-14 15:39:22.171 [ restartedMain ] - [ INFO  ] [ o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] : 173 ] - Initializing Spring embedded WebApplicationContext
+2020-08-14 15:39:22.608 [ restartedMain ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 930 ] - {dataSource-1} inited
+2020-08-14 15:39:24.078 [ restartedMain ] - [ INFO  ] [ org.hibernate.jpa.internal.util.LogHelper : 31 ] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-14 15:39:24.159 [ restartedMain ] - [ INFO  ] [ org.hibernate.Version : 44 ] - HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-14 15:39:24.324 [ restartedMain ] - [ INFO  ] [ org.hibernate.annotations.common.Version : 49 ] - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-14 15:39:24.529 [ restartedMain ] - [ INFO  ] [ org.hibernate.dialect.Dialect : 172 ] - HHH000400: Using dialect: org.hibernate.dialect.SQLServer2008Dialect
+2020-08-14 15:39:25.831 [ restartedMain ] - [ INFO  ] [ o.h.e.t.jta.platform.internal.JtaPlatformInitiator : 52 ] - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-14 15:39:27.088 [ restartedMain ] - [ INFO  ] [ s.d.s.w.PropertySourcedRequestMappingHandlerMapping : 69 ] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-08-14 15:39:27.776 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Starting ProtocolHandler ["http-nio-8888"]
+2020-08-14 15:39:27.807 [ restartedMain ] - [ INFO  ] [ s.d.s.web.plugins.DocumentationPluginsBootstrapper : 160 ] - Context refreshed
+2020-08-14 15:39:27.835 [ restartedMain ] - [ INFO  ] [ s.d.s.web.plugins.DocumentationPluginsBootstrapper : 163 ] - Found 1 custom documentation plugin(s)
+2020-08-14 15:39:27.879 [ restartedMain ] - [ INFO  ] [ s.d.spring.web.scanners.ApiListingReferenceScanner : 41 ] - Scanning for api listing references
+2020-08-14 15:39:28.152 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 61 ] - Started ApiToolServerApplication in 10.162 seconds (JVM running for 13.373)
+2020-08-14 15:39:42.275 [ http-nio-8888-exec-1 ] - [ INFO  ] [ o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] : 173 ] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-14 15:39:43.018 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 43 ] - 【createWord】：==>方法进入
+2020-08-14 15:39:43.019 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 44 ] - 【fileFullPath】：==>E:/word/仓库名称1.doc
+2020-08-14 15:39:43.019 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 45 ] - 【templateName】：==>6.ftl
+2020-08-14 15:39:43.112 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 50 ] - 【创建配置实例】：==>
+2020-08-14 15:39:43.113 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 54 ] - 【设置编码】：==>
+2020-08-14 15:39:43.398 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 105 ] - 【downLoadFile:fullPath】：==>E:/word/仓库名称1.doc
+2020-08-14 15:48:04.608 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 55 ] - Starting ApiToolServerApplication on LAPTOP-S5OMFD0A with PID 1692 (E:\api-work\api-model\api-tool\api-tool\api-tool-server\target\classes started by cq in E:\api-work\api-model\api-tool\api-tool)
+2020-08-14 15:48:04.612 [ restartedMain ] - [ DEBUG ] [ c.w.api.apitoolserver.ApiToolServerApplication : 56 ] - Running with Spring Boot v2.3.2.RELEASE, Spring v5.2.8.RELEASE
+2020-08-14 15:48:04.613 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 651 ] - No active profile set, falling back to default profiles: default
+2020-08-14 15:48:06.855 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Initializing ProtocolHandler ["http-nio-8888"]
+2020-08-14 15:48:06.856 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardService : 173 ] - Starting service [Tomcat]
+2020-08-14 15:48:06.856 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardEngine : 173 ] - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-14 15:48:07.019 [ restartedMain ] - [ INFO  ] [ o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] : 173 ] - Initializing Spring embedded WebApplicationContext
+2020-08-14 15:48:07.335 [ restartedMain ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 930 ] - {dataSource-1} inited
+2020-08-14 15:48:08.777 [ restartedMain ] - [ INFO  ] [ org.hibernate.jpa.internal.util.LogHelper : 31 ] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-14 15:48:08.858 [ restartedMain ] - [ INFO  ] [ org.hibernate.Version : 44 ] - HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-14 15:48:09.029 [ restartedMain ] - [ INFO  ] [ org.hibernate.annotations.common.Version : 49 ] - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-14 15:48:09.213 [ restartedMain ] - [ INFO  ] [ org.hibernate.dialect.Dialect : 172 ] - HHH000400: Using dialect: org.hibernate.dialect.SQLServer2008Dialect
+2020-08-14 15:48:10.470 [ restartedMain ] - [ INFO  ] [ o.h.e.t.jta.platform.internal.JtaPlatformInitiator : 52 ] - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-14 15:48:11.643 [ restartedMain ] - [ INFO  ] [ s.d.s.w.PropertySourcedRequestMappingHandlerMapping : 69 ] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-08-14 15:48:12.280 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Starting ProtocolHandler ["http-nio-8888"]
+2020-08-14 15:48:12.313 [ restartedMain ] - [ INFO  ] [ s.d.s.web.plugins.DocumentationPluginsBootstrapper : 160 ] - Context refreshed
+2020-08-14 15:48:12.341 [ restartedMain ] - [ INFO  ] [ s.d.s.web.plugins.DocumentationPluginsBootstrapper : 163 ] - Found 1 custom documentation plugin(s)
+2020-08-14 15:48:12.383 [ restartedMain ] - [ INFO  ] [ s.d.spring.web.scanners.ApiListingReferenceScanner : 41 ] - Scanning for api listing references
+2020-08-14 15:48:12.677 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 61 ] - Started ApiToolServerApplication in 8.972 seconds (JVM running for 11.636)
+2020-08-14 15:54:01.443 [ http-nio-8888-exec-1 ] - [ INFO  ] [ o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] : 173 ] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-14 15:54:02.335 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 43 ] - 【createWord】：==>方法进入
+2020-08-14 15:54:02.335 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 44 ] - 【fileFullPath】：==>E:/word/仓库名称3.doc
+2020-08-14 15:54:02.336 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 45 ] - 【templateName】：==>6.ftl
+2020-08-14 15:54:02.442 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 50 ] - 【创建配置实例】：==>
+2020-08-14 15:54:02.443 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 54 ] - 【设置编码】：==>
+2020-08-14 15:54:02.767 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 105 ] - 【downLoadFile:fullPath】：==>E:/word/仓库名称3.doc
+2020-08-14 15:56:13.888 [ http-nio-8888-exec-3 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 43 ] - 【createWord】：==>方法进入
+2020-08-14 15:56:13.888 [ http-nio-8888-exec-3 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 44 ] - 【fileFullPath】：==>E:/word/仓库名称3.doc
+2020-08-14 15:56:13.889 [ http-nio-8888-exec-3 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 45 ] - 【templateName】：==>6.ftl
+2020-08-14 15:56:13.889 [ http-nio-8888-exec-3 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 50 ] - 【创建配置实例】：==>
+2020-08-14 15:56:13.890 [ http-nio-8888-exec-3 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 54 ] - 【设置编码】：==>
+2020-08-14 15:56:13.892 [ http-nio-8888-exec-3 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 91 ] - 【生成word文件出错】：==>E:\word\仓库名称3.doc (另一个程序正在使用此文件，进程无法访问。)
+2020-08-14 15:56:13.894 [ http-nio-8888-exec-3 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 105 ] - 【downLoadFile:fullPath】：==>E:/word/仓库名称3.doc
+2020-08-14 15:59:25.476 [ http-nio-8888-exec-5 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 43 ] - 【createWord】：==>方法进入
+2020-08-14 15:59:25.478 [ http-nio-8888-exec-5 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 44 ] - 【fileFullPath】：==>E:/word/仓库名称3.doc
+2020-08-14 15:59:25.479 [ http-nio-8888-exec-5 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 45 ] - 【templateName】：==>6.ftl
+2020-08-14 15:59:25.483 [ http-nio-8888-exec-5 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 50 ] - 【创建配置实例】：==>
+2020-08-14 15:59:25.484 [ http-nio-8888-exec-5 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 54 ] - 【设置编码】：==>
+2020-08-14 15:59:25.590 [ http-nio-8888-exec-5 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 105 ] - 【downLoadFile:fullPath】：==>E:/word/仓库名称3.doc
+2020-08-14 16:04:00.539 [ http-nio-8888-exec-7 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 43 ] - 【createWord】：==>方法进入
+2020-08-14 16:04:00.540 [ http-nio-8888-exec-7 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 44 ] - 【fileFullPath】：==>E:/word/仓库名称3.doc
+2020-08-14 16:04:00.540 [ http-nio-8888-exec-7 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 45 ] - 【templateName】：==>6.ftl
+2020-08-14 16:04:00.541 [ http-nio-8888-exec-7 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 50 ] - 【创建配置实例】：==>
+2020-08-14 16:04:00.542 [ http-nio-8888-exec-7 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 54 ] - 【设置编码】：==>
+2020-08-14 16:04:00.544 [ http-nio-8888-exec-7 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 91 ] - 【生成word文件出错】：==>E:\word\仓库名称3.doc (另一个程序正在使用此文件，进程无法访问。)
+2020-08-14 16:04:00.546 [ http-nio-8888-exec-7 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 105 ] - 【downLoadFile:fullPath】：==>E:/word/仓库名称3.doc
+2020-08-14 16:04:16.527 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 55 ] - Starting ApiToolServerApplication on LAPTOP-S5OMFD0A with PID 14724 (E:\api-work\api-model\api-tool\api-tool\api-tool-server\target\classes started by cq in E:\api-work\api-model\api-tool\api-tool)
+2020-08-14 16:04:16.532 [ restartedMain ] - [ DEBUG ] [ c.w.api.apitoolserver.ApiToolServerApplication : 56 ] - Running with Spring Boot v2.3.2.RELEASE, Spring v5.2.8.RELEASE
+2020-08-14 16:04:16.533 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 651 ] - No active profile set, falling back to default profiles: default
+2020-08-14 16:04:19.057 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Initializing ProtocolHandler ["http-nio-8888"]
+2020-08-14 16:04:19.058 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardService : 173 ] - Starting service [Tomcat]
+2020-08-14 16:04:19.058 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardEngine : 173 ] - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-14 16:04:19.213 [ restartedMain ] - [ INFO  ] [ o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] : 173 ] - Initializing Spring embedded WebApplicationContext
+2020-08-14 16:04:19.546 [ restartedMain ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 930 ] - {dataSource-1} inited
+2020-08-14 16:04:21.141 [ restartedMain ] - [ INFO  ] [ org.hibernate.jpa.internal.util.LogHelper : 31 ] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-14 16:04:21.242 [ restartedMain ] - [ INFO  ] [ org.hibernate.Version : 44 ] - HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-14 16:04:21.476 [ restartedMain ] - [ INFO  ] [ org.hibernate.annotations.common.Version : 49 ] - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-14 16:04:21.689 [ restartedMain ] - [ INFO  ] [ org.hibernate.dialect.Dialect : 172 ] - HHH000400: Using dialect: org.hibernate.dialect.SQLServer2008Dialect
+2020-08-14 16:04:23.042 [ restartedMain ] - [ INFO  ] [ o.h.e.t.jta.platform.internal.JtaPlatformInitiator : 52 ] - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-14 16:04:24.679 [ restartedMain ] - [ INFO  ] [ s.d.s.w.PropertySourcedRequestMappingHandlerMapping : 69 ] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-08-14 16:04:25.580 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Starting ProtocolHandler ["http-nio-8888"]
+2020-08-14 16:04:25.619 [ restartedMain ] - [ INFO  ] [ s.d.s.web.plugins.DocumentationPluginsBootstrapper : 160 ] - Context refreshed
+2020-08-14 16:04:25.652 [ restartedMain ] - [ INFO  ] [ s.d.s.web.plugins.DocumentationPluginsBootstrapper : 163 ] - Found 1 custom documentation plugin(s)
+2020-08-14 16:04:25.705 [ restartedMain ] - [ INFO  ] [ s.d.spring.web.scanners.ApiListingReferenceScanner : 41 ] - Scanning for api listing references
+2020-08-14 16:04:26.119 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 61 ] - Started ApiToolServerApplication in 10.746 seconds (JVM running for 13.821)
+2020-08-14 16:04:31.225 [ http-nio-8888-exec-1 ] - [ INFO  ] [ o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] : 173 ] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-14 16:04:46.654 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 43 ] - 【createWord】：==>方法进入
+2020-08-14 16:04:46.656 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 44 ] - 【fileFullPath】：==>E:/word/仓库名称3.doc
+2020-08-14 16:04:46.657 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 45 ] - 【templateName】：==>6.ftl
+2020-08-14 16:04:46.798 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 50 ] - 【创建配置实例】：==>
+2020-08-14 16:04:46.799 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 54 ] - 【设置编码】：==>
+2020-08-14 16:04:47.130 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 105 ] - 【downLoadFile:fullPath】：==>E:/word/仓库名称3.doc
+2020-08-14 16:08:06.968 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 55 ] - Starting ApiToolServerApplication on LAPTOP-S5OMFD0A with PID 18668 (E:\api-work\api-model\api-tool\api-tool\api-tool-server\target\classes started by cq in E:\api-work\api-model\api-tool\api-tool)
+2020-08-14 16:08:06.976 [ restartedMain ] - [ DEBUG ] [ c.w.api.apitoolserver.ApiToolServerApplication : 56 ] - Running with Spring Boot v2.3.2.RELEASE, Spring v5.2.8.RELEASE
+2020-08-14 16:08:06.977 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 651 ] - No active profile set, falling back to default profiles: default
+2020-08-14 16:08:09.985 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Initializing ProtocolHandler ["http-nio-8888"]
+2020-08-14 16:08:09.986 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardService : 173 ] - Starting service [Tomcat]
+2020-08-14 16:08:09.986 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardEngine : 173 ] - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-14 16:08:10.213 [ restartedMain ] - [ INFO  ] [ o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] : 173 ] - Initializing Spring embedded WebApplicationContext
+2020-08-14 16:08:10.849 [ restartedMain ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 930 ] - {dataSource-1} inited
+2020-08-14 16:08:13.210 [ restartedMain ] - [ INFO  ] [ org.hibernate.jpa.internal.util.LogHelper : 31 ] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-14 16:08:13.311 [ restartedMain ] - [ INFO  ] [ org.hibernate.Version : 44 ] - HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-14 16:08:13.540 [ restartedMain ] - [ INFO  ] [ org.hibernate.annotations.common.Version : 49 ] - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-14 16:08:13.809 [ restartedMain ] - [ INFO  ] [ org.hibernate.dialect.Dialect : 172 ] - HHH000400: Using dialect: org.hibernate.dialect.SQLServer2008Dialect
+2020-08-14 16:08:15.139 [ restartedMain ] - [ INFO  ] [ o.h.e.t.jta.platform.internal.JtaPlatformInitiator : 52 ] - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-14 16:08:16.774 [ restartedMain ] - [ INFO  ] [ s.d.s.w.PropertySourcedRequestMappingHandlerMapping : 69 ] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-08-14 16:08:17.720 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Starting ProtocolHandler ["http-nio-8888"]
+2020-08-14 16:08:17.764 [ restartedMain ] - [ INFO  ] [ s.d.s.web.plugins.DocumentationPluginsBootstrapper : 160 ] - Context refreshed
+2020-08-14 16:08:17.802 [ restartedMain ] - [ INFO  ] [ s.d.s.web.plugins.DocumentationPluginsBootstrapper : 163 ] - Found 1 custom documentation plugin(s)
+2020-08-14 16:08:17.866 [ restartedMain ] - [ INFO  ] [ s.d.spring.web.scanners.ApiListingReferenceScanner : 41 ] - Scanning for api listing references
+2020-08-14 16:08:18.282 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 61 ] - Started ApiToolServerApplication in 12.493 seconds (JVM running for 16.237)
+2020-08-14 16:09:37.316 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 55 ] - Starting ApiToolServerApplication on LAPTOP-S5OMFD0A with PID 3700 (E:\api-work\api-model\api-tool\api-tool\api-tool-server\target\classes started by cq in E:\api-work\api-model\api-tool\api-tool)
+2020-08-14 16:09:37.320 [ restartedMain ] - [ DEBUG ] [ c.w.api.apitoolserver.ApiToolServerApplication : 56 ] - Running with Spring Boot v2.3.2.RELEASE, Spring v5.2.8.RELEASE
+2020-08-14 16:09:37.322 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 651 ] - No active profile set, falling back to default profiles: default
+2020-08-14 16:09:40.357 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Initializing ProtocolHandler ["http-nio-8888"]
+2020-08-14 16:09:40.358 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardService : 173 ] - Starting service [Tomcat]
+2020-08-14 16:09:40.358 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardEngine : 173 ] - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-14 16:09:40.571 [ restartedMain ] - [ INFO  ] [ o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] : 173 ] - Initializing Spring embedded WebApplicationContext
+2020-08-14 16:09:40.970 [ restartedMain ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 930 ] - {dataSource-1} inited
+2020-08-14 16:09:42.508 [ restartedMain ] - [ INFO  ] [ org.hibernate.jpa.internal.util.LogHelper : 31 ] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-14 16:09:42.601 [ restartedMain ] - [ INFO  ] [ org.hibernate.Version : 44 ] - HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-14 16:09:42.839 [ restartedMain ] - [ INFO  ] [ org.hibernate.annotations.common.Version : 49 ] - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-14 16:09:43.109 [ restartedMain ] - [ INFO  ] [ org.hibernate.dialect.Dialect : 172 ] - HHH000400: Using dialect: org.hibernate.dialect.SQLServer2008Dialect
+2020-08-14 16:09:44.703 [ restartedMain ] - [ INFO  ] [ o.h.e.t.jta.platform.internal.JtaPlatformInitiator : 52 ] - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-14 16:09:46.750 [ restartedMain ] - [ INFO  ] [ s.d.s.w.PropertySourcedRequestMappingHandlerMapping : 69 ] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-08-14 16:09:47.754 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Starting ProtocolHandler ["http-nio-8888"]
+2020-08-14 16:09:47.801 [ restartedMain ] - [ INFO  ] [ s.d.s.web.plugins.DocumentationPluginsBootstrapper : 160 ] - Context refreshed
+2020-08-14 16:09:47.842 [ restartedMain ] - [ INFO  ] [ s.d.s.web.plugins.DocumentationPluginsBootstrapper : 163 ] - Found 1 custom documentation plugin(s)
+2020-08-14 16:09:47.912 [ restartedMain ] - [ INFO  ] [ s.d.spring.web.scanners.ApiListingReferenceScanner : 41 ] - Scanning for api listing references
+2020-08-14 16:09:48.357 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 61 ] - Started ApiToolServerApplication in 11.982 seconds (JVM running for 14.809)
+2020-08-14 16:10:03.957 [ http-nio-8888-exec-1 ] - [ INFO  ] [ o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] : 173 ] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-14 16:10:29.949 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 43 ] - 【createWord】：==>方法进入
+2020-08-14 16:10:29.950 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 44 ] - 【fileFullPath】：==>E:/word/仓库名称3.doc
+2020-08-14 16:10:29.951 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 45 ] - 【templateName】：==>6.ftl
+2020-08-14 16:10:30.084 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 50 ] - 【创建配置实例】：==>
+2020-08-14 16:10:30.085 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 54 ] - 【设置编码】：==>
+2020-08-14 16:10:30.425 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 105 ] - 【downLoadFile:fullPath】：==>E:/word/仓库名称3.doc
+2020-08-14 16:13:42.422 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 55 ] - Starting ApiToolServerApplication on LAPTOP-S5OMFD0A with PID 31872 (E:\api-work\api-model\api-tool\api-tool\api-tool-server\target\classes started by cq in E:\api-work\api-model\api-tool\api-tool)
+2020-08-14 16:13:42.428 [ restartedMain ] - [ DEBUG ] [ c.w.api.apitoolserver.ApiToolServerApplication : 56 ] - Running with Spring Boot v2.3.2.RELEASE, Spring v5.2.8.RELEASE
+2020-08-14 16:13:42.429 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 651 ] - No active profile set, falling back to default profiles: default
+2020-08-14 16:13:44.946 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Initializing ProtocolHandler ["http-nio-8888"]
+2020-08-14 16:13:44.947 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardService : 173 ] - Starting service [Tomcat]
+2020-08-14 16:13:44.947 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardEngine : 173 ] - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-14 16:13:45.134 [ restartedMain ] - [ INFO  ] [ o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] : 173 ] - Initializing Spring embedded WebApplicationContext
+2020-08-14 16:13:45.469 [ restartedMain ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 930 ] - {dataSource-1} inited
+2020-08-14 16:13:47.036 [ restartedMain ] - [ INFO  ] [ org.hibernate.jpa.internal.util.LogHelper : 31 ] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-14 16:13:47.128 [ restartedMain ] - [ INFO  ] [ org.hibernate.Version : 44 ] - HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-14 16:13:47.342 [ restartedMain ] - [ INFO  ] [ org.hibernate.annotations.common.Version : 49 ] - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-14 16:13:47.707 [ restartedMain ] - [ INFO  ] [ org.hibernate.dialect.Dialect : 172 ] - HHH000400: Using dialect: org.hibernate.dialect.SQLServer2008Dialect
+2020-08-14 16:13:49.213 [ restartedMain ] - [ INFO  ] [ o.h.e.t.jta.platform.internal.JtaPlatformInitiator : 52 ] - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-14 16:13:50.562 [ restartedMain ] - [ INFO  ] [ s.d.s.w.PropertySourcedRequestMappingHandlerMapping : 69 ] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-08-14 16:13:51.345 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Starting ProtocolHandler ["http-nio-8888"]
+2020-08-14 16:13:51.384 [ restartedMain ] - [ INFO  ] [ s.d.s.web.plugins.DocumentationPluginsBootstrapper : 160 ] - Context refreshed
+2020-08-14 16:13:51.420 [ restartedMain ] - [ INFO  ] [ s.d.s.web.plugins.DocumentationPluginsBootstrapper : 163 ] - Found 1 custom documentation plugin(s)
+2020-08-14 16:13:51.470 [ restartedMain ] - [ INFO  ] [ s.d.spring.web.scanners.ApiListingReferenceScanner : 41 ] - Scanning for api listing references
+2020-08-14 16:13:51.818 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 61 ] - Started ApiToolServerApplication in 10.346 seconds (JVM running for 13.597)
+2020-08-14 16:14:38.072 [ http-nio-8888-exec-3 ] - [ INFO  ] [ o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] : 173 ] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-14 16:14:38.746 [ http-nio-8888-exec-3 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 43 ] - 【createWord】：==>方法进入
+2020-08-14 16:14:38.747 [ http-nio-8888-exec-3 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 44 ] - 【fileFullPath】：==>E:/word/仓库名称3.doc
+2020-08-14 16:14:38.747 [ http-nio-8888-exec-3 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 45 ] - 【templateName】：==>6.ftl
+2020-08-14 16:14:38.832 [ http-nio-8888-exec-3 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 50 ] - 【创建配置实例】：==>
+2020-08-14 16:14:38.832 [ http-nio-8888-exec-3 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 54 ] - 【设置编码】：==>
+2020-08-14 16:14:39.149 [ http-nio-8888-exec-3 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 105 ] - 【downLoadFile:fullPath】：==>E:/word/仓库名称3.doc
+2020-08-14 16:19:43.029 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 55 ] - Starting ApiToolServerApplication on LAPTOP-S5OMFD0A with PID 17184 (E:\api-work\api-model\api-tool\api-tool\api-tool-server\target\classes started by cq in E:\api-work\api-model\api-tool\api-tool)
+2020-08-14 16:19:43.037 [ restartedMain ] - [ DEBUG ] [ c.w.api.apitoolserver.ApiToolServerApplication : 56 ] - Running with Spring Boot v2.3.2.RELEASE, Spring v5.2.8.RELEASE
+2020-08-14 16:19:43.038 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 651 ] - No active profile set, falling back to default profiles: default
+2020-08-14 16:19:46.150 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Initializing ProtocolHandler ["http-nio-8888"]
+2020-08-14 16:19:46.151 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardService : 173 ] - Starting service [Tomcat]
+2020-08-14 16:19:46.151 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardEngine : 173 ] - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-14 16:19:46.316 [ restartedMain ] - [ INFO  ] [ o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] : 173 ] - Initializing Spring embedded WebApplicationContext
+2020-08-14 16:19:46.758 [ restartedMain ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 930 ] - {dataSource-1} inited
+2020-08-14 16:19:48.676 [ restartedMain ] - [ INFO  ] [ org.hibernate.jpa.internal.util.LogHelper : 31 ] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-14 16:19:48.795 [ restartedMain ] - [ INFO  ] [ org.hibernate.Version : 44 ] - HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-14 16:19:49.020 [ restartedMain ] - [ INFO  ] [ org.hibernate.annotations.common.Version : 49 ] - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-14 16:19:49.238 [ restartedMain ] - [ INFO  ] [ org.hibernate.dialect.Dialect : 172 ] - HHH000400: Using dialect: org.hibernate.dialect.SQLServer2008Dialect
+2020-08-14 16:19:50.473 [ restartedMain ] - [ INFO  ] [ o.h.e.t.jta.platform.internal.JtaPlatformInitiator : 52 ] - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-14 16:19:51.671 [ restartedMain ] - [ INFO  ] [ s.d.s.w.PropertySourcedRequestMappingHandlerMapping : 69 ] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-08-14 16:19:52.285 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Starting ProtocolHandler ["http-nio-8888"]
+2020-08-14 16:19:52.314 [ restartedMain ] - [ INFO  ] [ s.d.s.web.plugins.DocumentationPluginsBootstrapper : 160 ] - Context refreshed
+2020-08-14 16:19:52.339 [ restartedMain ] - [ INFO  ] [ s.d.s.web.plugins.DocumentationPluginsBootstrapper : 163 ] - Found 1 custom documentation plugin(s)
+2020-08-14 16:19:52.379 [ restartedMain ] - [ INFO  ] [ s.d.spring.web.scanners.ApiListingReferenceScanner : 41 ] - Scanning for api listing references
+2020-08-14 16:19:52.648 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 61 ] - Started ApiToolServerApplication in 10.927 seconds (JVM running for 14.037)
+2020-08-14 16:20:17.300 [ http-nio-8888-exec-1 ] - [ INFO  ] [ o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] : 173 ] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-14 16:20:18.693 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 43 ] - 【createWord】：==>方法进入
+2020-08-14 16:20:18.693 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 44 ] - 【fileFullPath】：==>E:/word/仓库名称3.doc
+2020-08-14 16:20:18.694 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 45 ] - 【templateName】：==>6.ftl
+2020-08-14 16:20:18.786 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 50 ] - 【创建配置实例】：==>
+2020-08-14 16:20:18.786 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 54 ] - 【设置编码】：==>
+2020-08-14 16:20:18.790 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 91 ] - 【生成word文件出错】：==>E:\word\仓库名称3.doc (另一个程序正在使用此文件，进程无法访问。)
+2020-08-14 16:20:18.792 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 105 ] - 【downLoadFile:fullPath】：==>E:/word/仓库名称3.doc
+2020-08-14 16:20:36.967 [ http-nio-8888-exec-2 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 43 ] - 【createWord】：==>方法进入
+2020-08-14 16:20:36.968 [ http-nio-8888-exec-2 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 44 ] - 【fileFullPath】：==>E:/word/仓库名称3.doc
+2020-08-14 16:20:36.969 [ http-nio-8888-exec-2 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 45 ] - 【templateName】：==>6.ftl
+2020-08-14 16:20:36.970 [ http-nio-8888-exec-2 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 50 ] - 【创建配置实例】：==>
+2020-08-14 16:20:36.970 [ http-nio-8888-exec-2 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 54 ] - 【设置编码】：==>
+2020-08-14 16:20:37.421 [ http-nio-8888-exec-2 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 105 ] - 【downLoadFile:fullPath】：==>E:/word/仓库名称3.doc
+2020-08-14 16:22:59.504 [ http-nio-8888-exec-4 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 43 ] - 【createWord】：==>方法进入
+2020-08-14 16:22:59.506 [ http-nio-8888-exec-4 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 44 ] - 【fileFullPath】：==>E:/word/仓库名称3.doc
+2020-08-14 16:22:59.507 [ http-nio-8888-exec-4 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 45 ] - 【templateName】：==>6.ftl
+2020-08-14 16:22:59.511 [ http-nio-8888-exec-4 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 50 ] - 【创建配置实例】：==>
+2020-08-14 16:22:59.512 [ http-nio-8888-exec-4 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 54 ] - 【设置编码】：==>
+2020-08-14 16:22:59.630 [ http-nio-8888-exec-4 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 105 ] - 【downLoadFile:fullPath】：==>E:/word/仓库名称3.doc
+2020-08-14 16:26:10.195 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 55 ] - Starting ApiToolServerApplication on LAPTOP-S5OMFD0A with PID 14304 (E:\api-work\api-model\api-tool\api-tool\api-tool-server\target\classes started by cq in E:\api-work\api-model\api-tool\api-tool)
+2020-08-14 16:26:10.201 [ restartedMain ] - [ DEBUG ] [ c.w.api.apitoolserver.ApiToolServerApplication : 56 ] - Running with Spring Boot v2.3.2.RELEASE, Spring v5.2.8.RELEASE
+2020-08-14 16:26:10.202 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 651 ] - No active profile set, falling back to default profiles: default
+2020-08-14 16:26:13.105 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Initializing ProtocolHandler ["http-nio-8888"]
+2020-08-14 16:26:13.106 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardService : 173 ] - Starting service [Tomcat]
+2020-08-14 16:26:13.106 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardEngine : 173 ] - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-14 16:26:13.342 [ restartedMain ] - [ INFO  ] [ o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] : 173 ] - Initializing Spring embedded WebApplicationContext
+2020-08-14 16:26:13.655 [ restartedMain ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 930 ] - {dataSource-1} inited
+2020-08-14 16:26:15.404 [ restartedMain ] - [ INFO  ] [ org.hibernate.jpa.internal.util.LogHelper : 31 ] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-14 16:26:15.577 [ restartedMain ] - [ INFO  ] [ org.hibernate.Version : 44 ] - HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-14 16:26:16.010 [ restartedMain ] - [ INFO  ] [ org.hibernate.annotations.common.Version : 49 ] - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-14 16:26:16.478 [ restartedMain ] - [ INFO  ] [ org.hibernate.dialect.Dialect : 172 ] - HHH000400: Using dialect: org.hibernate.dialect.SQLServer2008Dialect
+2020-08-14 16:26:19.281 [ restartedMain ] - [ INFO  ] [ o.h.e.t.jta.platform.internal.JtaPlatformInitiator : 52 ] - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-14 16:26:20.740 [ restartedMain ] - [ INFO  ] [ s.d.s.w.PropertySourcedRequestMappingHandlerMapping : 69 ] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-08-14 16:26:21.369 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Starting ProtocolHandler ["http-nio-8888"]
+2020-08-14 16:26:21.403 [ restartedMain ] - [ INFO  ] [ s.d.s.web.plugins.DocumentationPluginsBootstrapper : 160 ] - Context refreshed
+2020-08-14 16:26:21.430 [ restartedMain ] - [ INFO  ] [ s.d.s.web.plugins.DocumentationPluginsBootstrapper : 163 ] - Found 1 custom documentation plugin(s)
+2020-08-14 16:26:21.473 [ restartedMain ] - [ INFO  ] [ s.d.spring.web.scanners.ApiListingReferenceScanner : 41 ] - Scanning for api listing references
+2020-08-14 16:26:21.768 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 61 ] - Started ApiToolServerApplication in 12.599 seconds (JVM running for 15.422)
+2020-08-14 16:26:36.177 [ http-nio-8888-exec-1 ] - [ INFO  ] [ o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] : 173 ] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-14 16:26:36.890 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 43 ] - 【createWord】：==>方法进入
+2020-08-14 16:26:36.890 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 44 ] - 【fileFullPath】：==>E:/word/仓库名称3.doc
+2020-08-14 16:26:36.890 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 45 ] - 【templateName】：==>6.ftl
+2020-08-14 16:26:36.999 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 50 ] - 【创建配置实例】：==>
+2020-08-14 16:26:37.000 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 54 ] - 【设置编码】：==>
+2020-08-14 16:26:37.284 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 105 ] - 【downLoadFile:fullPath】：==>E:/word/仓库名称3.doc
+2020-08-14 16:46:24.889 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 55 ] - Starting ApiToolServerApplication on LAPTOP-S5OMFD0A with PID 16580 (E:\api-work\api-model\api-tool\api-tool\api-tool-server\target\classes started by cq in E:\api-work\api-model\api-tool\api-tool)
+2020-08-14 16:46:24.896 [ restartedMain ] - [ DEBUG ] [ c.w.api.apitoolserver.ApiToolServerApplication : 56 ] - Running with Spring Boot v2.3.2.RELEASE, Spring v5.2.8.RELEASE
+2020-08-14 16:46:24.899 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 651 ] - No active profile set, falling back to default profiles: default
+2020-08-14 16:46:27.871 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Initializing ProtocolHandler ["http-nio-8888"]
+2020-08-14 16:46:27.873 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardService : 173 ] - Starting service [Tomcat]
+2020-08-14 16:46:27.874 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardEngine : 173 ] - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-14 16:46:28.144 [ restartedMain ] - [ INFO  ] [ o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] : 173 ] - Initializing Spring embedded WebApplicationContext
+2020-08-14 16:46:28.631 [ restartedMain ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 930 ] - {dataSource-1} inited
+2020-08-14 16:46:30.140 [ restartedMain ] - [ INFO  ] [ org.hibernate.jpa.internal.util.LogHelper : 31 ] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-14 16:46:30.218 [ restartedMain ] - [ INFO  ] [ org.hibernate.Version : 44 ] - HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-14 16:46:30.388 [ restartedMain ] - [ INFO  ] [ org.hibernate.annotations.common.Version : 49 ] - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-14 16:46:30.626 [ restartedMain ] - [ INFO  ] [ org.hibernate.dialect.Dialect : 172 ] - HHH000400: Using dialect: org.hibernate.dialect.SQLServer2008Dialect
+2020-08-14 16:46:32.968 [ restartedMain ] - [ INFO  ] [ o.h.e.t.jta.platform.internal.JtaPlatformInitiator : 52 ] - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-14 16:46:34.592 [ restartedMain ] - [ INFO  ] [ s.d.s.w.PropertySourcedRequestMappingHandlerMapping : 69 ] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-08-14 16:46:35.585 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Starting ProtocolHandler ["http-nio-8888"]
+2020-08-14 16:46:35.649 [ restartedMain ] - [ INFO  ] [ s.d.s.web.plugins.DocumentationPluginsBootstrapper : 160 ] - Context refreshed
+2020-08-14 16:46:35.700 [ restartedMain ] - [ INFO  ] [ s.d.s.web.plugins.DocumentationPluginsBootstrapper : 163 ] - Found 1 custom documentation plugin(s)
+2020-08-14 16:46:35.757 [ restartedMain ] - [ INFO  ] [ s.d.spring.web.scanners.ApiListingReferenceScanner : 41 ] - Scanning for api listing references
+2020-08-14 16:46:36.095 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 61 ] - Started ApiToolServerApplication in 13.678 seconds (JVM running for 19.501)
+2020-08-14 16:46:44.522 [ http-nio-8888-exec-1 ] - [ INFO  ] [ o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] : 173 ] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-14 16:46:45.162 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 43 ] - 【createWord】：==>方法进入
+2020-08-14 16:46:45.162 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 44 ] - 【fileFullPath】：==>E:/word/仓库名称3.doc
+2020-08-14 16:46:45.163 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 45 ] - 【templateName】：==>6.ftl
+2020-08-14 16:46:45.261 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 50 ] - 【创建配置实例】：==>
+2020-08-14 16:46:45.262 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 54 ] - 【设置编码】：==>
+2020-08-14 16:46:45.802 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 105 ] - 【downLoadFile:fullPath】：==>E:/word/仓库名称3.doc
+2020-08-14 16:48:51.445 [ http-nio-8888-exec-2 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 43 ] - 【createWord】：==>方法进入
+2020-08-14 16:48:51.446 [ http-nio-8888-exec-2 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 44 ] - 【fileFullPath】：==>E:/word/仓库名称3.doc
+2020-08-14 16:48:51.446 [ http-nio-8888-exec-2 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 45 ] - 【templateName】：==>6.ftl
+2020-08-14 16:48:51.447 [ http-nio-8888-exec-2 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 50 ] - 【创建配置实例】：==>
+2020-08-14 16:48:51.447 [ http-nio-8888-exec-2 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 54 ] - 【设置编码】：==>
+2020-08-14 16:48:51.581 [ http-nio-8888-exec-2 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 105 ] - 【downLoadFile:fullPath】：==>E:/word/仓库名称3.doc
+2020-08-14 16:57:07.814 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 55 ] - Starting ApiToolServerApplication on LAPTOP-S5OMFD0A with PID 22596 (E:\api-work\api-model\api-tool\api-tool\api-tool-server\target\classes started by cq in E:\api-work\api-model\api-tool\api-tool)
+2020-08-14 16:57:07.819 [ restartedMain ] - [ DEBUG ] [ c.w.api.apitoolserver.ApiToolServerApplication : 56 ] - Running with Spring Boot v2.3.2.RELEASE, Spring v5.2.8.RELEASE
+2020-08-14 16:57:07.820 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 651 ] - No active profile set, falling back to default profiles: default
+2020-08-14 16:57:09.986 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Initializing ProtocolHandler ["http-nio-8888"]
+2020-08-14 16:57:09.987 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardService : 173 ] - Starting service [Tomcat]
+2020-08-14 16:57:09.987 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardEngine : 173 ] - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-14 16:57:10.149 [ restartedMain ] - [ INFO  ] [ o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] : 173 ] - Initializing Spring embedded WebApplicationContext
+2020-08-14 16:57:10.450 [ restartedMain ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 930 ] - {dataSource-1} inited
+2020-08-14 16:57:11.873 [ restartedMain ] - [ INFO  ] [ org.hibernate.jpa.internal.util.LogHelper : 31 ] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-14 16:57:11.949 [ restartedMain ] - [ INFO  ] [ org.hibernate.Version : 44 ] - HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-14 16:57:12.114 [ restartedMain ] - [ INFO  ] [ org.hibernate.annotations.common.Version : 49 ] - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-14 16:57:12.299 [ restartedMain ] - [ INFO  ] [ org.hibernate.dialect.Dialect : 172 ] - HHH000400: Using dialect: org.hibernate.dialect.SQLServer2008Dialect
+2020-08-14 16:57:13.564 [ restartedMain ] - [ INFO  ] [ o.h.e.t.jta.platform.internal.JtaPlatformInitiator : 52 ] - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-14 16:57:14.765 [ restartedMain ] - [ INFO  ] [ s.d.s.w.PropertySourcedRequestMappingHandlerMapping : 69 ] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-08-14 16:57:15.410 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Starting ProtocolHandler ["http-nio-8888"]
+2020-08-14 16:57:15.448 [ restartedMain ] - [ INFO  ] [ s.d.s.web.plugins.DocumentationPluginsBootstrapper : 160 ] - Context refreshed
+2020-08-14 16:57:15.475 [ restartedMain ] - [ INFO  ] [ s.d.s.web.plugins.DocumentationPluginsBootstrapper : 163 ] - Found 1 custom documentation plugin(s)
+2020-08-14 16:57:15.516 [ restartedMain ] - [ INFO  ] [ s.d.spring.web.scanners.ApiListingReferenceScanner : 41 ] - Scanning for api listing references
+2020-08-14 16:57:15.779 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 61 ] - Started ApiToolServerApplication in 8.795 seconds (JVM running for 11.501)
+2020-08-14 17:01:49.148 [ http-nio-8888-exec-1 ] - [ INFO  ] [ o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] : 173 ] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-14 17:02:27.839 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 43 ] - 【createWord】：==>方法进入
+2020-08-14 17:02:27.840 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 44 ] - 【fileFullPath】：==>E:/word/仓库名称3.doc
+2020-08-14 17:02:27.840 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 45 ] - 【templateName】：==>6.ftl
+2020-08-14 17:02:27.948 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 50 ] - 【创建配置实例】：==>
+2020-08-14 17:02:27.948 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 54 ] - 【设置编码】：==>
+2020-08-14 17:02:28.270 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 105 ] - 【downLoadFile:fullPath】：==>E:/word/仓库名称3.doc
+2020-08-14 17:06:17.258 [ background-preinit ] - [ DEBUG ] [ o.h.v.i.engine.ValidatorFactoryConfigurationHelper : 300 ] - HV000252: Using org.hibernate.validator.internal.engine.DefaultPropertyNodeNameProvider as property node name provider.
+2020-08-14 17:06:17.427 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 55 ] - Starting ApiToolServerApplication on LAPTOP-S5OMFD0A with PID 20972 (E:\api-work\api-model\api-tool\api-tool\api-tool-server\target\classes started by cq in E:\api-work\api-model\api-tool\api-tool)
+2020-08-14 17:06:17.430 [ restartedMain ] - [ DEBUG ] [ c.w.api.apitoolserver.ApiToolServerApplication : 56 ] - Running with Spring Boot v2.3.2.RELEASE, Spring v5.2.8.RELEASE
+2020-08-14 17:06:17.432 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 651 ] - No active profile set, falling back to default profiles: default
+2020-08-14 17:06:20.547 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Initializing ProtocolHandler ["http-nio-8888"]
+2020-08-14 17:06:20.549 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardService : 173 ] - Starting service [Tomcat]
+2020-08-14 17:06:20.549 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardEngine : 173 ] - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-14 17:06:20.831 [ restartedMain ] - [ INFO  ] [ o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] : 173 ] - Initializing Spring embedded WebApplicationContext
+2020-08-14 17:06:21.290 [ restartedMain ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 930 ] - {dataSource-1} inited
+2020-08-14 17:06:25.512 [ restartedMain ] - [ INFO  ] [ org.hibernate.jpa.internal.util.LogHelper : 31 ] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-14 17:06:25.744 [ restartedMain ] - [ INFO  ] [ org.hibernate.Version : 44 ] - HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-14 17:06:26.304 [ restartedMain ] - [ INFO  ] [ org.hibernate.annotations.common.Version : 49 ] - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-14 17:06:26.919 [ restartedMain ] - [ INFO  ] [ org.hibernate.dialect.Dialect : 172 ] - HHH000400: Using dialect: org.hibernate.dialect.SQLServer2008Dialect
+2020-08-14 17:06:29.274 [ restartedMain ] - [ INFO  ] [ o.h.e.t.jta.platform.internal.JtaPlatformInitiator : 52 ] - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-14 17:06:30.856 [ restartedMain ] - [ INFO  ] [ s.d.s.w.PropertySourcedRequestMappingHandlerMapping : 69 ] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-08-14 17:06:31.674 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Starting ProtocolHandler ["http-nio-8888"]
+2020-08-14 17:06:31.719 [ restartedMain ] - [ INFO  ] [ s.d.s.web.plugins.DocumentationPluginsBootstrapper : 160 ] - Context refreshed
+2020-08-14 17:06:31.760 [ restartedMain ] - [ INFO  ] [ s.d.s.web.plugins.DocumentationPluginsBootstrapper : 163 ] - Found 1 custom documentation plugin(s)
+2020-08-14 17:06:31.825 [ restartedMain ] - [ INFO  ] [ s.d.spring.web.scanners.ApiListingReferenceScanner : 41 ] - Scanning for api listing references
+2020-08-14 17:06:32.281 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 61 ] - Started ApiToolServerApplication in 16.153 seconds (JVM running for 19.813)
+2020-08-14 17:06:46.692 [ http-nio-8888-exec-1 ] - [ INFO  ] [ o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] : 173 ] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-14 17:06:47.360 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 43 ] - 【createWord】：==>方法进入
+2020-08-14 17:06:47.361 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 44 ] - 【fileFullPath】：==>E:/word/仓库名称3.doc
+2020-08-14 17:06:47.361 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 45 ] - 【templateName】：==>6.ftl
+2020-08-14 17:06:47.468 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 50 ] - 【创建配置实例】：==>
+2020-08-14 17:06:47.468 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 54 ] - 【设置编码】：==>
+2020-08-14 17:06:47.816 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 105 ] - 【downLoadFile:fullPath】：==>E:/word/仓库名称3.doc
+2020-08-14 17:08:44.427 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 55 ] - Starting ApiToolServerApplication on LAPTOP-S5OMFD0A with PID 10668 (E:\api-work\api-model\api-tool\api-tool\api-tool-server\target\classes started by cq in E:\api-work\api-model\api-tool\api-tool)
+2020-08-14 17:08:44.433 [ restartedMain ] - [ DEBUG ] [ c.w.api.apitoolserver.ApiToolServerApplication : 56 ] - Running with Spring Boot v2.3.2.RELEASE, Spring v5.2.8.RELEASE
+2020-08-14 17:08:44.434 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 651 ] - No active profile set, falling back to default profiles: default
+2020-08-14 17:08:46.698 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Initializing ProtocolHandler ["http-nio-8888"]
+2020-08-14 17:08:46.699 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardService : 173 ] - Starting service [Tomcat]
+2020-08-14 17:08:46.700 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardEngine : 173 ] - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-14 17:08:46.859 [ restartedMain ] - [ INFO  ] [ o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] : 173 ] - Initializing Spring embedded WebApplicationContext
+2020-08-14 17:08:47.178 [ restartedMain ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 930 ] - {dataSource-1} inited
+2020-08-14 17:08:48.617 [ restartedMain ] - [ INFO  ] [ org.hibernate.jpa.internal.util.LogHelper : 31 ] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-14 17:08:48.729 [ restartedMain ] - [ INFO  ] [ org.hibernate.Version : 44 ] - HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-14 17:08:48.955 [ restartedMain ] - [ INFO  ] [ org.hibernate.annotations.common.Version : 49 ] - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-14 17:08:49.162 [ restartedMain ] - [ INFO  ] [ org.hibernate.dialect.Dialect : 172 ] - HHH000400: Using dialect: org.hibernate.dialect.SQLServer2008Dialect
+2020-08-14 17:08:50.439 [ restartedMain ] - [ INFO  ] [ o.h.e.t.jta.platform.internal.JtaPlatformInitiator : 52 ] - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-14 17:08:51.631 [ restartedMain ] - [ INFO  ] [ s.d.s.w.PropertySourcedRequestMappingHandlerMapping : 69 ] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-08-14 17:08:52.271 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Starting ProtocolHandler ["http-nio-8888"]
+2020-08-14 17:08:52.311 [ restartedMain ] - [ INFO  ] [ s.d.s.web.plugins.DocumentationPluginsBootstrapper : 160 ] - Context refreshed
+2020-08-14 17:08:52.356 [ restartedMain ] - [ INFO  ] [ s.d.s.web.plugins.DocumentationPluginsBootstrapper : 163 ] - Found 1 custom documentation plugin(s)
+2020-08-14 17:08:52.426 [ restartedMain ] - [ INFO  ] [ s.d.spring.web.scanners.ApiListingReferenceScanner : 41 ] - Scanning for api listing references
+2020-08-14 17:08:52.812 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 61 ] - Started ApiToolServerApplication in 9.279 seconds (JVM running for 11.974)
+2020-08-14 17:09:01.427 [ http-nio-8888-exec-1 ] - [ INFO  ] [ o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] : 173 ] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-14 17:09:02.078 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 43 ] - 【createWord】：==>方法进入
+2020-08-14 17:09:02.079 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 44 ] - 【fileFullPath】：==>E:/word/仓库名称3.doc
+2020-08-14 17:09:02.080 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 45 ] - 【templateName】：==>6.ftl
+2020-08-14 17:09:02.191 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 50 ] - 【创建配置实例】：==>
+2020-08-14 17:09:02.191 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 54 ] - 【设置编码】：==>
+2020-08-14 17:09:02.486 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 105 ] - 【downLoadFile:fullPath】：==>E:/word/仓库名称3.doc
+2020-08-14 17:10:13.651 [ http-nio-8888-exec-2 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 43 ] - 【createWord】：==>方法进入
+2020-08-14 17:10:13.651 [ http-nio-8888-exec-2 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 44 ] - 【fileFullPath】：==>E:/word/仓库名称3.doc
+2020-08-14 17:10:13.651 [ http-nio-8888-exec-2 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 45 ] - 【templateName】：==>6.ftl
+2020-08-14 17:10:13.652 [ http-nio-8888-exec-2 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 50 ] - 【创建配置实例】：==>
+2020-08-14 17:10:13.652 [ http-nio-8888-exec-2 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 54 ] - 【设置编码】：==>
+2020-08-14 17:10:13.730 [ http-nio-8888-exec-2 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 105 ] - 【downLoadFile:fullPath】：==>E:/word/仓库名称3.doc
+2020-08-14 17:14:32.606 [ http-nio-8888-exec-4 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 43 ] - 【createWord】：==>方法进入
+2020-08-14 17:14:32.607 [ http-nio-8888-exec-4 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 44 ] - 【fileFullPath】：==>E:/word/仓库名称3.doc
+2020-08-14 17:14:32.607 [ http-nio-8888-exec-4 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 45 ] - 【templateName】：==>6.ftl
+2020-08-14 17:14:32.608 [ http-nio-8888-exec-4 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 50 ] - 【创建配置实例】：==>
+2020-08-14 17:14:32.608 [ http-nio-8888-exec-4 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 54 ] - 【设置编码】：==>
+2020-08-14 17:14:32.679 [ http-nio-8888-exec-4 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 105 ] - 【downLoadFile:fullPath】：==>E:/word/仓库名称3.doc
+2020-08-14 17:16:29.880 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 55 ] - Starting ApiToolServerApplication on LAPTOP-S5OMFD0A with PID 9548 (E:\api-work\api-model\api-tool\api-tool\api-tool-server\target\classes started by cq in E:\api-work\api-model\api-tool\api-tool)
+2020-08-14 17:16:29.885 [ restartedMain ] - [ DEBUG ] [ c.w.api.apitoolserver.ApiToolServerApplication : 56 ] - Running with Spring Boot v2.3.2.RELEASE, Spring v5.2.8.RELEASE
+2020-08-14 17:16:29.886 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 651 ] - No active profile set, falling back to default profiles: default
+2020-08-14 17:16:32.032 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Initializing ProtocolHandler ["http-nio-8888"]
+2020-08-14 17:16:32.033 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardService : 173 ] - Starting service [Tomcat]
+2020-08-14 17:16:32.033 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardEngine : 173 ] - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-14 17:16:32.190 [ restartedMain ] - [ INFO  ] [ o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] : 173 ] - Initializing Spring embedded WebApplicationContext
+2020-08-14 17:16:32.501 [ restartedMain ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 930 ] - {dataSource-1} inited
+2020-08-14 17:16:34.049 [ restartedMain ] - [ INFO  ] [ org.hibernate.jpa.internal.util.LogHelper : 31 ] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-14 17:16:34.126 [ restartedMain ] - [ INFO  ] [ org.hibernate.Version : 44 ] - HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-14 17:16:34.292 [ restartedMain ] - [ INFO  ] [ org.hibernate.annotations.common.Version : 49 ] - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-14 17:16:34.510 [ restartedMain ] - [ INFO  ] [ org.hibernate.dialect.Dialect : 172 ] - HHH000400: Using dialect: org.hibernate.dialect.SQLServer2008Dialect
+2020-08-14 17:16:35.790 [ restartedMain ] - [ INFO  ] [ o.h.e.t.jta.platform.internal.JtaPlatformInitiator : 52 ] - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-14 17:16:37.119 [ restartedMain ] - [ INFO  ] [ s.d.s.w.PropertySourcedRequestMappingHandlerMapping : 69 ] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-08-14 17:16:37.785 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Starting ProtocolHandler ["http-nio-8888"]
+2020-08-14 17:16:37.815 [ restartedMain ] - [ INFO  ] [ s.d.s.web.plugins.DocumentationPluginsBootstrapper : 160 ] - Context refreshed
+2020-08-14 17:16:37.842 [ restartedMain ] - [ INFO  ] [ s.d.s.web.plugins.DocumentationPluginsBootstrapper : 163 ] - Found 1 custom documentation plugin(s)
+2020-08-14 17:16:37.883 [ restartedMain ] - [ INFO  ] [ s.d.spring.web.scanners.ApiListingReferenceScanner : 41 ] - Scanning for api listing references
+2020-08-14 17:16:38.159 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 61 ] - Started ApiToolServerApplication in 9.197 seconds (JVM running for 12.02)
+2020-08-14 17:16:42.246 [ http-nio-8888-exec-1 ] - [ INFO  ] [ o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] : 173 ] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-14 17:16:43.165 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 43 ] - 【createWord】：==>方法进入
+2020-08-14 17:16:43.166 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 44 ] - 【fileFullPath】：==>E:/word/仓库名称3.doc
+2020-08-14 17:16:43.167 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 45 ] - 【templateName】：==>6.ftl
+2020-08-14 17:16:43.272 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 50 ] - 【创建配置实例】：==>
+2020-08-14 17:16:43.272 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 54 ] - 【设置编码】：==>
+2020-08-14 17:16:43.562 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 105 ] - 【downLoadFile:fullPath】：==>E:/word/仓库名称3.doc
+2020-08-14 17:18:49.449 [ http-nio-8888-exec-3 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 43 ] - 【createWord】：==>方法进入
+2020-08-14 17:18:49.450 [ http-nio-8888-exec-3 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 44 ] - 【fileFullPath】：==>E:/word/仓库名称3.doc
+2020-08-14 17:18:49.450 [ http-nio-8888-exec-3 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 45 ] - 【templateName】：==>6.ftl
+2020-08-14 17:18:49.451 [ http-nio-8888-exec-3 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 50 ] - 【创建配置实例】：==>
+2020-08-14 17:18:49.451 [ http-nio-8888-exec-3 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 54 ] - 【设置编码】：==>
+2020-08-14 17:18:49.533 [ http-nio-8888-exec-3 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 105 ] - 【downLoadFile:fullPath】：==>E:/word/仓库名称3.doc
+2020-08-14 17:22:48.757 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 55 ] - Starting ApiToolServerApplication on LAPTOP-S5OMFD0A with PID 30736 (E:\api-work\api-model\api-tool\api-tool\api-tool-server\target\classes started by cq in E:\api-work\api-model\api-tool\api-tool)
+2020-08-14 17:22:48.765 [ restartedMain ] - [ DEBUG ] [ c.w.api.apitoolserver.ApiToolServerApplication : 56 ] - Running with Spring Boot v2.3.2.RELEASE, Spring v5.2.8.RELEASE
+2020-08-14 17:22:48.767 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 651 ] - No active profile set, falling back to default profiles: default
+2020-08-14 17:22:52.192 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Initializing ProtocolHandler ["http-nio-8888"]
+2020-08-14 17:22:52.193 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardService : 173 ] - Starting service [Tomcat]
+2020-08-14 17:22:52.193 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardEngine : 173 ] - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-14 17:22:52.391 [ restartedMain ] - [ INFO  ] [ o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] : 173 ] - Initializing Spring embedded WebApplicationContext
+2020-08-14 17:22:52.757 [ restartedMain ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 930 ] - {dataSource-1} inited
+2020-08-14 17:22:54.219 [ restartedMain ] - [ INFO  ] [ org.hibernate.jpa.internal.util.LogHelper : 31 ] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-14 17:22:54.295 [ restartedMain ] - [ INFO  ] [ org.hibernate.Version : 44 ] - HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-14 17:22:54.458 [ restartedMain ] - [ INFO  ] [ org.hibernate.annotations.common.Version : 49 ] - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-14 17:22:54.643 [ restartedMain ] - [ INFO  ] [ org.hibernate.dialect.Dialect : 172 ] - HHH000400: Using dialect: org.hibernate.dialect.SQLServer2008Dialect
+2020-08-14 17:22:55.917 [ restartedMain ] - [ INFO  ] [ o.h.e.t.jta.platform.internal.JtaPlatformInitiator : 52 ] - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-14 17:22:57.370 [ restartedMain ] - [ INFO  ] [ s.d.s.w.PropertySourcedRequestMappingHandlerMapping : 69 ] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-08-14 17:22:58.158 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Starting ProtocolHandler ["http-nio-8888"]
+2020-08-14 17:22:58.204 [ restartedMain ] - [ INFO  ] [ s.d.s.web.plugins.DocumentationPluginsBootstrapper : 160 ] - Context refreshed
+2020-08-14 17:22:58.244 [ restartedMain ] - [ INFO  ] [ s.d.s.web.plugins.DocumentationPluginsBootstrapper : 163 ] - Found 1 custom documentation plugin(s)
+2020-08-14 17:22:58.308 [ restartedMain ] - [ INFO  ] [ s.d.spring.web.scanners.ApiListingReferenceScanner : 41 ] - Scanning for api listing references
+2020-08-14 17:22:58.962 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 61 ] - Started ApiToolServerApplication in 11.541 seconds (JVM running for 15.314)
+2020-08-14 17:23:30.892 [ http-nio-8888-exec-1 ] - [ INFO  ] [ o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] : 173 ] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-14 17:23:36.782 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 43 ] - 【createWord】：==>方法进入
+2020-08-14 17:23:36.783 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 44 ] - 【fileFullPath】：==>E:/word/仓库名称3.doc
+2020-08-14 17:23:36.784 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 45 ] - 【templateName】：==>6.ftl
+2020-08-14 17:23:36.910 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 50 ] - 【创建配置实例】：==>
+2020-08-14 17:23:36.910 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 54 ] - 【设置编码】：==>
+2020-08-14 17:23:37.247 [ http-nio-8888-exec-1 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 105 ] - 【downLoadFile:fullPath】：==>E:/word/仓库名称3.doc
+2020-08-14 17:33:53.587 [ http-nio-8888-exec-9 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 43 ] - 【createWord】：==>方法进入
+2020-08-14 17:33:53.587 [ http-nio-8888-exec-9 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 44 ] - 【fileFullPath】：==>E:/word/仓库名称3.doc
+2020-08-14 17:33:53.588 [ http-nio-8888-exec-9 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 45 ] - 【templateName】：==>6.ftl
+2020-08-14 17:33:53.589 [ http-nio-8888-exec-9 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 50 ] - 【创建配置实例】：==>
+2020-08-14 17:33:53.589 [ http-nio-8888-exec-9 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 54 ] - 【设置编码】：==>
+2020-08-14 17:33:53.734 [ http-nio-8888-exec-9 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 105 ] - 【downLoadFile:fullPath】：==>E:/word/仓库名称3.doc
+2020-08-14 17:48:20.268 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 55 ] - Starting ApiToolServerApplication on LAPTOP-S5OMFD0A with PID 22340 (E:\api-work\api-model\api-tool\api-tool\api-tool-server\target\classes started by cq in E:\api-work\api-model\api-tool\api-tool)
+2020-08-14 17:48:20.276 [ restartedMain ] - [ DEBUG ] [ c.w.api.apitoolserver.ApiToolServerApplication : 56 ] - Running with Spring Boot v2.3.2.RELEASE, Spring v5.2.8.RELEASE
+2020-08-14 17:48:20.277 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 651 ] - No active profile set, falling back to default profiles: default
+2020-08-14 17:48:24.431 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Initializing ProtocolHandler ["http-nio-8888"]
+2020-08-14 17:48:24.432 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardService : 173 ] - Starting service [Tomcat]
+2020-08-14 17:48:24.432 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardEngine : 173 ] - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-14 17:48:24.565 [ restartedMain ] - [ INFO  ] [ o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] : 173 ] - Initializing Spring embedded WebApplicationContext
+2020-08-14 17:48:24.893 [ restartedMain ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 930 ] - {dataSource-1} inited
+2020-08-14 17:48:26.592 [ restartedMain ] - [ INFO  ] [ org.hibernate.jpa.internal.util.LogHelper : 31 ] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-14 17:48:26.697 [ restartedMain ] - [ INFO  ] [ org.hibernate.Version : 44 ] - HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-14 17:48:26.893 [ restartedMain ] - [ INFO  ] [ org.hibernate.annotations.common.Version : 49 ] - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-14 17:48:27.100 [ restartedMain ] - [ INFO  ] [ org.hibernate.dialect.Dialect : 172 ] - HHH000400: Using dialect: org.hibernate.dialect.SQLServer2008Dialect
+2020-08-14 17:48:28.489 [ restartedMain ] - [ INFO  ] [ o.h.e.t.jta.platform.internal.JtaPlatformInitiator : 52 ] - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-14 17:48:29.943 [ restartedMain ] - [ INFO  ] [ s.d.s.w.PropertySourcedRequestMappingHandlerMapping : 69 ] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-08-14 17:48:30.646 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Starting ProtocolHandler ["http-nio-8888"]
+2020-08-14 17:48:30.677 [ restartedMain ] - [ INFO  ] [ s.d.s.web.plugins.DocumentationPluginsBootstrapper : 160 ] - Context refreshed
+2020-08-14 17:48:30.706 [ restartedMain ] - [ INFO  ] [ s.d.s.web.plugins.DocumentationPluginsBootstrapper : 163 ] - Found 1 custom documentation plugin(s)
+2020-08-14 17:48:30.754 [ restartedMain ] - [ INFO  ] [ s.d.spring.web.scanners.ApiListingReferenceScanner : 41 ] - Scanning for api listing references
+2020-08-14 17:48:31.095 [ restartedMain ] - [ INFO  ] [ c.w.api.apitoolserver.ApiToolServerApplication : 61 ] - Started ApiToolServerApplication in 12.011 seconds (JVM running for 15.494)
+2020-08-14 17:48:37.281 [ http-nio-8888-exec-2 ] - [ INFO  ] [ o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] : 173 ] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-14 17:48:53.250 [ http-nio-8888-exec-2 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 43 ] - 【createWord】：==>方法进入
+2020-08-14 17:48:53.251 [ http-nio-8888-exec-2 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 44 ] - 【fileFullPath】：==>E:/word/仓库名称3.doc
+2020-08-14 17:48:53.251 [ http-nio-8888-exec-2 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 45 ] - 【templateName】：==>6.ftl
+2020-08-14 17:48:53.376 [ http-nio-8888-exec-2 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 50 ] - 【创建配置实例】：==>
+2020-08-14 17:48:53.376 [ http-nio-8888-exec-2 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 54 ] - 【设置编码】：==>
+2020-08-14 17:48:53.781 [ http-nio-8888-exec-2 ] - [ INFO  ] [ com.winning.api.apitoolcommon.WordUtil : 105 ] - 【downLoadFile:fullPath】：==>E:/word/仓库名称3.doc

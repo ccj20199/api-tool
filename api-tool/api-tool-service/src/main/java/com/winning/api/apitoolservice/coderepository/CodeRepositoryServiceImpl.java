@@ -26,6 +26,10 @@ import com.winning.api.apitoolservice.vo.coderepository.search.SearchByIdOutVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+import java.math.BigInteger;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
@@ -49,6 +53,9 @@ public class CodeRepositoryServiceImpl implements CodeRepositoryService {
     @Autowired
     private BusinessDomainInformationRepository domainInformationRepository;
 
+    @Autowired
+    @PersistenceContext
+    private EntityManager entityManager;
 
     @Override
     public AddOutVO add(AddInputVO inputVO) {
@@ -64,6 +71,7 @@ public class CodeRepositoryServiceImpl implements CodeRepositoryService {
         Date date=DateTime.now();
         po.setCreateAt(date);
         po.setModifiedAt(date);
+        po.setCurrApiNo("0001");
         codeRepository.save(po);
         return outVO;
     }
@@ -92,14 +100,14 @@ public class CodeRepositoryServiceImpl implements CodeRepositoryService {
         }
         //获取当前最大的appId
         String appIdString=inputVO.getRepositoryArchitectTypeCode()+po.getBusinessDomainRepositoryNo();
-        List<CodeRepositoryInformationPO> list= codeRepository.listbyAppId(appIdString);
+        List<BigInteger> list= getCodeRepositoryInformationPOs(appIdString);
         if(CollectionUtil.isEmpty(list)){
 
             if(!(appIdString+ Constant.STRING_ZERO).equals(inputVO.getAppId().toString())){
                 throw  new BusinessException("appId应为："+appIdString+Constant.STRING_ZERO);
             }
         }else{
-            int appId=list.get(0).getAppId().intValue()+1;
+            int appId=list.get(0).intValue()+1;
             if(appId!=inputVO.getAppId().intValue()){
                 throw new BusinessException("appId应为："+appId);
             }
@@ -149,9 +157,7 @@ public class CodeRepositoryServiceImpl implements CodeRepositoryService {
         po.setModifiedAt(date);
         po.setCreateAt(oldPO.getCreateAt());
         po.setCreateBy(oldPO.getCreateBy());
-        if(Objects.isNull(inputVO.getRepositoryBusinessTypeCode())){
-            po.setRepositoryArchitectTypeCode(oldPO.getRepositoryBusinessTypeCode());
-        }
+        po.setCurrApiNo(oldPO.getCurrApiNo());
         if(StrUtil.isBlank(inputVO.getInterfaceBasePath())){
             po.setInterfaceBasePath(oldPO.getInterfaceBasePath());
         }
@@ -173,10 +179,7 @@ public class CodeRepositoryServiceImpl implements CodeRepositoryService {
 
     private void checkApiNo(EditInputVO inputVO){
 
-        int count=codeRepository.countByApiNo(inputVO.getCurrApiNo(),inputVO.getCodeRepositoryId());
-        if(count>0){
-            throw  new BusinessException("已存在【api编号】："+inputVO.getCurrApiNo());
-        }
+
         // 判断 服务appId 四位
         if(inputVO.getAppId().toString().length()!=4){
             throw new BusinessException("服务appId为四位数");
@@ -194,14 +197,15 @@ public class CodeRepositoryServiceImpl implements CodeRepositoryService {
         }
         //获取当前最大的appId
         String appIdString=inputVO.getRepositoryArchitectTypeCode()+po.getBusinessDomainRepositoryNo();
-        List<CodeRepositoryInformationPO> list= codeRepository.listbyAppId(appIdString);
+        List<BigInteger> list= getCodeRepositoryInformationPOs(appIdString);
         if(CollectionUtil.isEmpty(list)){
 
             if(!(appIdString+Constant.STRING_ZERO).equals(inputVO.getAppId().toString())){
                 throw  new BusinessException("appId应为："+appIdString+Constant.STRING_ZERO);
             }
         }else{
-            int appId=list.get(0).getAppId().intValue()+1;
+            int appId=list.get(0).intValue()+1;
+
             if(appId!=inputVO.getAppId().intValue()){
                 throw new BusinessException("appId应为："+appId);
             }
@@ -259,17 +263,32 @@ public class CodeRepositoryServiceImpl implements CodeRepositoryService {
         }
         //查询 代码仓库中的 最大值是？ 通过当前仓库架构类别代码+业务域编码查询
         String appIdString=inputVO.getRepositoryArchitectTypeCode()+po.getBusinessDomainRepositoryNo();
-        List<CodeRepositoryInformationPO> list= codeRepository.listbyAppId(appIdString);
+        List<BigInteger> list= getCodeRepositoryInformationPOs(appIdString);
         Integer appId= 0;
         if(CollectionUtil.isEmpty(list)){
             appId= Integer.parseInt(appIdString+ Constant.STRING_ZERO);
 
         }else{
-            appId=list.get(0).getAppId().intValue()+1;
+            appId=list.get(0).intValue()+1;
         }
         outVO.setAppId(appId);
         outVO.setExceptionClassNo(appId);
         outVO.setDefaultPort(Integer.parseInt(appId+"0"));
         return outVO;
+    }
+
+    private List<BigInteger> getCodeRepositoryInformationPOs(String appId){
+
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("select u.APP_ID appId from CODE_REPOSITORY_INFORMATION u");
+
+        stringBuilder.append(" where u.APP_ID Like ('%"+appId+"%')");
+        stringBuilder.append(" order by u.APP_ID desc");
+
+
+        Query query = entityManager.createNativeQuery(stringBuilder.toString());
+        List<BigInteger> list= (List<BigInteger>)query.getResultList();
+
+        return list;
     }
 }

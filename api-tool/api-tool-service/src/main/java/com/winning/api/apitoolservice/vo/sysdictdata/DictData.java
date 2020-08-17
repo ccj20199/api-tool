@@ -42,5 +42,9 @@ public class DictData {
      *最后更新时间
      */
     private Date modifiedAt;
+    /**
+     * 字典关键字
+     */
+    private String dictKeyWord;
 
 }

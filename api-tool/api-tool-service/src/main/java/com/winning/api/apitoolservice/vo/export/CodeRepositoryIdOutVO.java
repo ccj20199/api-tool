@@ -36,6 +36,9 @@ public class CodeRepositoryIdOutVO {
     private String allowPage;
 
     private String requestMethodCodeName;
+    private Long groupId;
+    private String titleNumber;
+    private Integer titleType;
 
 
     /**

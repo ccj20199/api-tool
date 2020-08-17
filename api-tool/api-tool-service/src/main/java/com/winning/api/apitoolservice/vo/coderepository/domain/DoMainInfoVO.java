@@ -24,4 +24,8 @@ public class DoMainInfoVO {
      * 业务域名称
      */
     private String businessDomainName;
+    /**
+     * 业务域 关键字
+     */
+    private String businessDomainKeyWord;
 }

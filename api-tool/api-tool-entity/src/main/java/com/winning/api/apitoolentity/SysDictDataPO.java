@@ -80,4 +80,11 @@ public class SysDictDataPO {
     @Basic
     @Column(name = "MODIFIED_AT")
     private Date modifiedAt;
+
+    /**
+     * 字典关键字
+     */
+    @Basic
+    @Column(name = "DICT_KEY_WORD")
+    private String dictKeyWord;
 }

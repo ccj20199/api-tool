@@ -11,6 +11,7 @@ import com.winning.api.apitooldao.*;
 import com.winning.api.apitoolentity.ApiInformationDetailUpdatePO;
 import com.winning.api.apitoolentity.ApiParameterInformationUpdatePO;
 import com.winning.api.apitoolentity.CodeRepositoryInformationPO;
+import com.winning.api.apitoolservice.enumpack.ApiState;
 import com.winning.api.apitoolservice.enumpack.HangUpStatus;
 import com.winning.api.apitoolservice.enumpack.ParameterType;
 
@@ -83,6 +84,7 @@ public class ApiInformationDetailUpdateServiceImpl {
         po.setCreateAt(now);
         po.setModifiedAt(now);
         po.setApiNo(apiNo);
+        po.setApiStatusCode(ApiState.TO_BE_DEVELOPED.getCode());
         po.setHangUpStatusCode(HangUpStatus.NEW.getCode());
         apiInformationDetailUpdateRepository.save(po);
 
@@ -175,6 +177,7 @@ public class ApiInformationDetailUpdateServiceImpl {
         po.setApiNo(oldPo.getApiNo());
         po.setApiId(oldPo.getApiId());
         po.setCreateAt(oldPo.getCreateAt());
+        po.setApiStatusCode(oldPo.getApiStatusCode());
         po.setModifiedAt(DateTime.now());
         if(StrUtil.isBlank(inputVO.getMemo())){
             po.setMemo(oldPo.getMemo());

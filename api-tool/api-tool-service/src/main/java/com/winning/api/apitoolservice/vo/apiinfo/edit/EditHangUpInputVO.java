@@ -36,10 +36,10 @@ public class EditHangUpInputVO {
     @NotBlank(message = "API名称不为空")
     @ApiModelProperty(value = "API的URL",required = true,position = 40)
     private String apiUrl;
-
-    @NotNull(message = "API状态代码不为空")
-    @ApiModelProperty(value = "API状态代码",required = true,position = 50)
-    private Long apiStatusCode;
+//
+//    @NotNull(message = "API状态代码不为空")
+//    @ApiModelProperty(value = "API状态代码",required = true,position = 50)
+//    private Long apiStatusCode;
 
     @NotNull(message = "请求方式代码不为空")
     @ApiModelProperty(value = "请求方式代码",required = true,position = 60)

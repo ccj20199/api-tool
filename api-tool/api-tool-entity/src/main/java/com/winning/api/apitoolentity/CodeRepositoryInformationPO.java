@@ -40,12 +40,7 @@ public class CodeRepositoryInformationPO {
     @Column(name = "REPOSITORY_ARCHITECT_TYPE_CODE")
     private Long repositoryArchitectTypeCode;
 
-    /**
-     * 仓库业务类别代码
-     */
-    @Basic
-    @Column(name = "REPOSITORY_BUSINESS_TYPE_CODE")
-    private Long repositoryBusinessTypeCode;
+
 
     /**
      * 仓库名称

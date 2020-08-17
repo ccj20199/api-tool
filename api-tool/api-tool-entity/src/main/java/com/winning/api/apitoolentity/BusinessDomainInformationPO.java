@@ -36,4 +36,8 @@ public class BusinessDomainInformationPO {
     @Basic
     @Column(name = "BUSINESS_DOMAIN_NAME")
     private String businessDomainName;
+
+    @Basic
+    @Column(name = "BUSINESS_DOMAIN_KEY_WORD")
+    private String businessDomainKeyWord;
 }

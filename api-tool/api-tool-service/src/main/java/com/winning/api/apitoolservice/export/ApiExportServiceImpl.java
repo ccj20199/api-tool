@@ -3,7 +3,7 @@ package com.winning.api.apitoolservice.export;
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.collection.CollectionUtil;
 import com.google.common.collect.Lists;
-
+import com.winning.api.apitoolcommon.BusinessException;
 import com.winning.api.apitoolcommon.contant.Constant;
 import com.winning.api.apitooldao.ApiInformationDetailRepository;
 import com.winning.api.apitooldao.ApiParameterInformationRepository;
@@ -13,15 +13,17 @@ import com.winning.api.apitoolentity.ApiInformationDetailPO;
 import com.winning.api.apitoolentity.ApiParameterInformationPO;
 import com.winning.api.apitoolentity.CodeRepositoryGroupPO;
 import com.winning.api.apitoolentity.CodeRepositoryInformationPO;
-import com.winning.api.apitoolcommon.BusinessException;
 import com.winning.api.apitoolservice.enumpack.DataTypeCode;
 import com.winning.api.apitoolservice.enumpack.ParameterType;
 import com.winning.api.apitoolservice.enumpack.RequestMethodCode;
 import com.winning.api.apitoolservice.util.ExportApiParamInfoUtil;
+import com.winning.api.apitoolservice.vo.coderepositorygroup.search.GroupInfo;
 import com.winning.api.apitoolservice.vo.export.CodeRepositoryIdOutVO;
 import com.winning.api.apitoolservice.vo.export.ExportApiParameter;
+import com.winning.api.apitoolservice.vo.export.ExportGroupInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -50,7 +52,8 @@ public class ApiExportServiceImpl {
     private ExportApiParamInfoUtil exportApiParamInfoUtil;
     @Autowired
     private CodeRepositoryInformationRepository codeRepositoryInformationRepository;
-
+    @Autowired
+    private ExportGroupInfoUtil exportGroupInfoUtil;
 
     public List<CodeRepositoryIdOutVO> exportByCodeRepositoryId(Long codeRepositoryId) {
 
@@ -141,5 +144,26 @@ public class ApiExportServiceImpl {
            throw  new BusinessException("未查到代码标识【"+codeRepositoryId+"】：代码仓库");
        }
        return optional.get().getRepositoryName();
+    }
+
+
+    public List<ExportGroupInfo> getData(Long codeRepositoryId) {
+
+
+        List<CodeRepositoryIdOutVO> codeRepositoryIdOutVOS=exportByCodeRepositoryId(codeRepositoryId);
+        List<CodeRepositoryGroupPO> list=codeRepositoryGroupRepository.listByCodeRepositoryId(codeRepositoryId,Constant.IS_DEL_YES);
+
+            List<ExportGroupInfo> groupInfos = Lists.newArrayList();
+            list.forEach(e->{
+                ExportGroupInfo info=new ExportGroupInfo();
+                info.setGroupId(e.getGroupId());
+                info.setGroupName(e.getGroupName());
+                info.setParentGroupId(e.getParentGroupId());
+                groupInfos.add(info);
+            });
+         List<ExportGroupInfo> allList=  exportGroupInfoUtil.getExportGroupInfo(groupInfos,codeRepositoryIdOutVOS,3);
+        // 组装数据
+
+        return allList;
     }
 }

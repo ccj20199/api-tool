@@ -32,6 +32,8 @@ public class SysDictDataServiceImpl implements SysDictDataService {
 
         List<SysDictDataPO> list= sysDictDataRepository.listByDictId(inputVO.getDictId());
 
+
+
         if(CollectionUtil.isNotEmpty(list)){
             List<DictData> data= Lists.newArrayListWithCapacity(list.size());
             for (SysDictDataPO sysDictDataPO : list) {

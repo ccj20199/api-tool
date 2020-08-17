@@ -54,6 +54,5 @@ public interface CodeRepositoryInformationRepository extends JpaRepository<CodeR
     void updateApiNoById(Long codeRepositoryId, String currApiNoUpdate);
 
 
-    @Query("select po  from CodeRepositoryInformationPO po where po.appId like '%?1%' order by appId desc ")
-    List<CodeRepositoryInformationPO> listbyAppId(String appId);
+
 }
