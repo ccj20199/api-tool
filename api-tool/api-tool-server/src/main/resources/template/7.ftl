@@ -2590,20 +2590,7 @@
                     <#list groupInfos as groupInfo>
                         <w:p>
                             <w:pPr>
-                                <#if groupInfo.titleType==2>
-                                    <w:pStyle w:val="2"/>
-                                </#if>
-                                <#if groupInfo.titleType==3>
-                                    <w:pStyle w:val="3"/>
-                                </#if>
-                                <#if groupInfo.titleType==4>
-                                    <w:pStyle w:val="4"/>
-                                </#if>
-                                <#if groupInfo.titleType==5>
-                                    <w:pStyle w:val="5"/>
-                                <#else >
-                                    <w:pStyle w:val="6"/>
-                                </#if>
+                                <w:pStyle w:val="${groupInfo.titleType}"/>
                                 <w:rPr>
                                     <w:rFonts w:hint="default"/>
                                     <w:lang w:val="EN-US" w:fareast="ZH-CN"/>
@@ -2614,26 +2601,13 @@
                                     <w:rFonts w:hint="fareast"/>
                                     <w:lang w:val="EN-US" w:fareast="ZH-CN"/>
                                 </w:rPr>
-                                <w:t>3.${groupInfo_index+1}${groupInfo.groupName}</w:t>
+                                <w:t>${groupInfo.titleNumber} ${groupInfo.groupName}</w:t>
                             </w:r>
                         </w:p>
                         <#list  groupInfo.codeRepositoryIdOutVOS as vo>
                             <w:p>
                                 <w:pPr>
-                                    <#if groupInfo.titleType==2>
-                                        <w:pStyle w:val="2"/>
-                                    </#if>
-                                    <#if groupInfo.titleType==3>
-                                        <w:pStyle w:val="3"/>
-                                    </#if>
-                                    <#if groupInfo.titleType==4>
-                                        <w:pStyle w:val="4"/>
-                                    </#if>
-                                    <#if groupInfo.titleType==5>
-                                        <w:pStyle w:val="5"/>
-                                    <#else >
-                                        <w:pStyle w:val="6"/>
-                                    </#if>
+                                    <w:pStyle w:val="${vo.titleType}"/>
                                     <w:rPr>
                                         <w:rFonts w:hint="default"/>
                                         <w:lang w:val="EN-US" w:fareast="ZH-CN"/>
@@ -2644,7 +2618,7 @@
                                         <w:rFonts w:hint="fareast"/>
                                         <w:lang w:val="EN-US" w:fareast="ZH-CN"/>
                                     </w:rPr>
-                                    <w:t>3.${groupInfo_index+1}.${vo_index+1}${vo.apiName}</w:t>
+                                    <w:t>${vo.titleNumber}.${vo_index+1} ${vo.apiName}</w:t>
                                 </w:r>
                             </w:p>
                             <w:tbl>

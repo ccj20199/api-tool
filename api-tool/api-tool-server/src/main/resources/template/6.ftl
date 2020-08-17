@@ -2590,7 +2590,7 @@
                     <#list groupInfos as groupInfo>
                 <w:p>
                     <w:pPr>
-                         <w:pStyle w:val="3"/>
+                         <w:pStyle w:val="${groupInfo.titleType}"/>
                         <w:rPr>
                             <w:rFonts w:hint="default"/>
                             <w:lang w:val="EN-US" w:fareast="ZH-CN"/>
@@ -2607,7 +2607,7 @@
                     <#list  groupInfo.codeRepositoryIdOutVOS as vo>
                 <w:p>
                     <w:pPr>
-                       <w:pStyle w:val="4"/>
+                       <w:pStyle w:val="${vo.titleType}"/>
                         <w:rPr>
                             <w:rFonts w:hint="default"/>
                             <w:lang w:val="EN-US" w:fareast="ZH-CN"/>
@@ -3011,26 +3011,20 @@
                             </w:tcPr>
                             <w:p>
                                 <w:pPr>
+                                    <w:pStyle w:val="a9"/>
                                     <w:widowControl/>
-                                    <w:jc w:val="left"/>
+                                    <w:listPr>
+                                        <w:ilvl w:val="0"/>
+                                        <w:ilfo w:val="0"/>
+                                    </w:listPr>
+                                    <w:jc w:val="center"/>
                                     <w:rPr>
                                         <w:rFonts w:ascii="Segoe UI" w:h-ansi="Segoe UI" w:fareast="宋体" w:cs="Segoe UI" w:hint="default"/>
                                         <w:kern w:val="0"/>
                                         <w:sz w:val="21"/>
                                         <w:sz-cs w:val="21"/>
-                                        <w:lang w:val="EN-US" w:fareast="ZH-CN"/>
                                     </w:rPr>
                                 </w:pPr>
-                                <w:r>
-                                    <w:rPr>
-                                        <w:rFonts w:ascii="Segoe UI" w:h-ansi="Segoe UI" w:cs="Segoe UI" w:hint="fareast"/>
-                                        <w:kern w:val="0"/>
-                                        <w:sz w:val="21"/>
-                                        <w:sz-cs w:val="21"/>
-                                        <w:lang w:val="EN-US" w:fareast="ZH-CN"/>
-                                    </w:rPr>
-                                    <w:t>                               </w:t>
-                                </w:r>
                                 <w:r>
                                     <w:rPr>
                                         <w:rFonts w:ascii="宋体" w:h-ansi="宋体" w:cs="宋体" w:hint="fareast"/>

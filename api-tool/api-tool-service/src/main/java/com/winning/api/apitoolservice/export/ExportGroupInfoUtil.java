@@ -41,7 +41,7 @@ public class ExportGroupInfoUtil {
                     o.setTitleType(finalType);
                 });
                 e.setCodeRepositoryIdOutVOS(filter);
-                e.setTitleType(type);
+                e.setTitleType(3);
                 e.setTitleNumber(titleNumber);
                 baseLists.add(e);
             }

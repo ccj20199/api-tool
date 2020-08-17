@@ -161,7 +161,7 @@ public class ApiExportServiceImpl {
                 info.setParentGroupId(e.getParentGroupId());
                 groupInfos.add(info);
             });
-         List<ExportGroupInfo> allList=  exportGroupInfoUtil.getExportGroupInfo(groupInfos,codeRepositoryIdOutVOS,3);
+         List<ExportGroupInfo> allList=  exportGroupInfoUtil.getExportGroupInfo(groupInfos,codeRepositoryIdOutVOS,4);
         // 组装数据
 
         return allList;

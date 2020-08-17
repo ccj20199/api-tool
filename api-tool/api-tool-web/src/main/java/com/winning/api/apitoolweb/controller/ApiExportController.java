@@ -4,7 +4,6 @@ import com.google.common.collect.Maps;
 import com.winning.api.apitoolcommon.WordUtil;
 import com.winning.api.apitoolservice.export.ApiExportServiceImpl;
 import com.winning.api.apitoolservice.vo.export.CodeRepositoryIdInputVO;
-import com.winning.api.apitoolservice.vo.export.CodeRepositoryIdOutVO;
 import com.winning.api.apitoolservice.vo.export.ExportGroupInfo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -54,7 +53,7 @@ public class ApiExportController {
         WordUtil.createWord(map,"6.ftl",upload+name+".doc");
         WordUtil.downLoadFile(request,upload+name+".doc",response);
         // 删除文件
-       // WordUtil.DeleteFolder(upload+name+".doc");
+        WordUtil.DeleteFolder(upload);
     }
 }
 

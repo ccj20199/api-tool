@@ -1,5 +1,6 @@
 package com.winning.api.apitoolservice.vo.export;
 
+import com.winning.api.apitoolservice.util.HtmlToText;
 import lombok.Data;
 
 import java.util.List;
@@ -51,4 +52,8 @@ public class CodeRepositoryIdOutVO {
      */
     private List<ExportApiParameter> outputParameterList;
 
+
+    public String getBusinessRule() {
+        return HtmlToText.getContent(this.businessRule);
+    }
 }
