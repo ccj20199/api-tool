@@ -6,11 +6,14 @@ import cn.hutool.core.date.DateTime;
 import cn.hutool.core.util.NumberUtil;
 import cn.hutool.core.util.StrUtil;
 import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
 import com.winning.api.apitoolcommon.BusinessException;
 import com.winning.api.apitoolcommon.contant.Constant;
 import com.winning.api.apitooldao.BusinessDomainInformationRepository;
+import com.winning.api.apitooldao.CodeRepositoryGroupRepository;
 import com.winning.api.apitooldao.CodeRepositoryInformationRepository;
 import com.winning.api.apitoolentity.BusinessDomainInformationPO;
+import com.winning.api.apitoolentity.CodeRepositoryGroupPO;
 import com.winning.api.apitoolentity.CodeRepositoryInformationPO;
 import com.winning.api.apitoolservice.vo.coderepository.add.AddInputVO;
 import com.winning.api.apitoolservice.vo.coderepository.add.AddOutVO;
@@ -30,10 +33,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import java.math.BigInteger;
-import java.util.Date;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
+import java.util.*;
+import java.util.stream.Collectors;
 
 import static com.winning.api.apitoolcommon.IdWorker.getSnowflakeId;
 
@@ -56,6 +57,8 @@ public class CodeRepositoryServiceImpl implements CodeRepositoryService {
     @Autowired
     @PersistenceContext
     private EntityManager entityManager;
+    @Autowired
+    private CodeRepositoryGroupRepository codeRepositoryGroupRepository;
 
     @Override
     public AddOutVO add(AddInputVO inputVO) {
@@ -195,22 +198,6 @@ public class CodeRepositoryServiceImpl implements CodeRepositoryService {
             throw  new BusinessException("当前的业务域编码不是数字类型！！");
 
         }
-        //获取当前最大的appId
-        String appIdString=inputVO.getRepositoryArchitectTypeCode()+po.getBusinessDomainRepositoryNo();
-        List<BigInteger> list= getCodeRepositoryInformationPOs(appIdString);
-        if(CollectionUtil.isEmpty(list)){
-
-            if(!(appIdString+Constant.STRING_ZERO).equals(inputVO.getAppId().toString())){
-                throw  new BusinessException("appId应为："+appIdString+Constant.STRING_ZERO);
-            }
-        }else{
-            int appId=list.get(0).intValue()+1;
-
-            if(appId!=inputVO.getAppId().intValue()){
-                throw new BusinessException("appId应为："+appId);
-            }
-
-        }
         //校验
         if(!inputVO.getExceptionClassNo().toString().equals(inputVO.getAppId().toString())){
             throw new BusinessException("异常类别编码和服务appId一致");
@@ -225,19 +212,41 @@ public class CodeRepositoryServiceImpl implements CodeRepositoryService {
     @Override
     public SearchByIdOutVO search(SearchByIdInputVO inputVO) {
 
-        List<CodeRepositoryInformationPO> list= codeRepository.listByBusinessDomainId(inputVO.getBusinessDomainId());
-        if(CollectionUtil.isNotEmpty(list)){
+        Long repositoryStatusCode = inputVO.getRepositoryStatusCode();
+        List<CodeRepositoryInformationPO> list;
+        if(Objects.isNull(repositoryStatusCode)){
+            list= codeRepository.listByBusinessDomainId(inputVO.getBusinessDomainId());
+        }else{
+            list= codeRepository.listByBusinessDomainIdAndStatusCode(inputVO.getBusinessDomainId(),repositoryStatusCode);
+        }
 
+        if(CollectionUtil.isNotEmpty(list)){
             final List<CodeRepositoryVO> data= Lists.newArrayListWithCapacity(list.size());
+            List<Long> codeRepositoryIds = list.stream().map(e -> e.getCodeRepositoryId()).collect(Collectors.toList());
+            // 通过代码仓库标识 查询分组信息
+            List<CodeRepositoryGroupPO> codeRepositoryGroupPOS=codeRepositoryGroupRepository.listByCodeRepositoryIds(codeRepositoryIds, Constant.IS_DEL_YES);
+            Map<Long, List<CodeRepositoryGroupPO>> map= Maps.newHashMap();
+            if(CollectionUtil.isNotEmpty(codeRepositoryGroupPOS)){
+                map = codeRepositoryGroupPOS.stream()
+                        .collect(Collectors.groupingBy(CodeRepositoryGroupPO::getCodeRepositoryId));
+            }
+            Map<Long, List<CodeRepositoryGroupPO>> finalMap = map;
             list.forEach(e->{
                 CodeRepositoryVO codeRepositoryVO=new CodeRepositoryVO();
                 BeanUtil.copyProperties(e, codeRepositoryVO);
+                List<CodeRepositoryGroupPO> codeRepositoryGroupPOList=finalMap.get(e.getCodeRepositoryId());
+                if(CollectionUtil.isNotEmpty(codeRepositoryGroupPOList)){
+                    codeRepositoryVO.setApiCount(codeRepositoryGroupPOList.size());
+                }
                 data.add(codeRepositoryVO);
             });
+
+
+
+
             SearchByIdOutVO queryAllOutVO=new SearchByIdOutVO();
             queryAllOutVO.setData(data);
             return  queryAllOutVO;
-
         }
         return null;
     }

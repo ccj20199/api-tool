@@ -53,6 +53,11 @@ public interface CodeRepositoryInformationRepository extends JpaRepository<CodeR
     @Query(" update   CodeRepositoryInformationPO set currApiNo=?2 where codeRepositoryId=?1")
     void updateApiNoById(Long codeRepositoryId, String currApiNoUpdate);
 
-
-
+    /**
+     * 获取代码仓库信息
+     * @param businessDomainId 通过业务域标识查询 当前的代码仓库信息
+     * @return 获取代码仓库信息
+     */
+    @Query("select po  from CodeRepositoryInformationPO po where po.businessDomainId =?1 and po.repositoryStatusCode =?2 ")
+    List<CodeRepositoryInformationPO> listByBusinessDomainIdAndStatusCode(Long businessDomainId, Long repositoryStatusCode);
 }

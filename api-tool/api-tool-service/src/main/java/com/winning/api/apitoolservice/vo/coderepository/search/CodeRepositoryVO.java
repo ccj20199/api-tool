@@ -91,5 +91,9 @@ public class CodeRepositoryVO {
      * 当前API编号
      */
     private String currApiNo;
+    /**
+     * api数量 稳定版
+     */
+    private Integer apiCount;
 
 }

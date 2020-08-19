@@ -75,4 +75,7 @@ public interface CodeRepositoryGroupRepository extends JpaRepository<CodeReposit
      */
     @Query("select  po.codeRepositoryId from CodeRepositoryGroupPO po where po.groupId=?1 and po.isDel=?2")
     Long getCodeRepositoryIdById(Long groupId, Integer isDelYes);
+
+    @Query("select  po from CodeRepositoryGroupPO po where po.codeRepositoryId in (?1) and po.isDel=?2 ")
+    List<CodeRepositoryGroupPO> listByCodeRepositoryIds(List<Long> codeRepositoryIds, Integer isDelYes);
 }
