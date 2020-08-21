@@ -19,6 +19,7 @@ import com.winning.api.apitoolservice.vo.apiinfo.info.InfoByGroupIdInputVO;
 import com.winning.api.apitoolservice.vo.apiinfo.info.InfoByGroupIdOutVO;
 import com.winning.api.apitoolservice.vo.apiinfo.save.SaveApiInfoInputVO;
 import com.winning.api.apitoolservice.vo.apiinfo.search.*;
+import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -51,6 +52,9 @@ public class ApiInformationDetailServiceImpl {
 
     @Autowired
     private ApiParameterInformationRepository apiParameterInformationRepository;
+
+    @Autowired
+    private EmployeesRepository employeesRepository;
 
     @Autowired
     private ApiParamInfoUtil apiParamInfoUtil;
@@ -181,6 +185,25 @@ public class ApiInformationDetailServiceImpl {
             BeanUtil.copyProperties(apiInformationDetailUpdatePO,info);
             list.add(info);
         }
+        // 通过员工 id查询 员工名称
+        List<String> createByIds = list.stream().map(e -> e.getCreateBy()).distinct().collect(Collectors.toList());
+        Map<String,EmployeesPO> empIdMap=Maps.newHashMap();
+        if(CollectionUtils.isNotEmpty(createByIds)){
+            List<EmployeesPO> employeesPOS=employeesRepository.listByEmpids(createByIds);
+             empIdMap=employeesPOS.stream()
+                    .collect(Collectors.toMap(EmployeesPO::getEmpid,o->o,(k1,k2)->k2));
+        }
+
+        Map<String, EmployeesPO> finalEmpIdMap = empIdMap;
+        list.forEach(e->{
+
+            EmployeesPO employeesPO=  finalEmpIdMap.get(e.getCreateBy()) ;
+            if(Objects.nonNull(employeesPO)){
+                e.setCreateByName(employeesPO.getEmpname());
+            }
+        });
+
+
         return list;
     }
 

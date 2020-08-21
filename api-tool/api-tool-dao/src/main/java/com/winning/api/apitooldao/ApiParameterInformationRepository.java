@@ -43,4 +43,14 @@ public interface ApiParameterInformationRepository extends JpaRepository<ApiPara
     @Transactional(rollbackOn = Exception.class)
     @Query(" delete  from ApiParameterInformationPO where apiId=?1")
     void deleteByApiId(Long apiId);
+
+    /**
+     * API的参数信息
+     * @param apiId API标识
+     * @param parameterTypeCode 参数类型代码
+     * @return API的参数信息
+     */
+    @Query("select  po from ApiParameterInformationPO po where po.apiId = ?1 and po.parameterTypeCode=?2 ")
+    List<ApiParameterInformationPO> listByApiId(Long apiId,
+                                                Long parameterTypeCode);
 }

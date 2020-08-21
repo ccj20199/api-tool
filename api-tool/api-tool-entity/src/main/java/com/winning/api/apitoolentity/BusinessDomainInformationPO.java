@@ -40,4 +40,8 @@ public class BusinessDomainInformationPO {
     @Basic
     @Column(name = "BUSINESS_DOMAIN_KEY_WORD")
     private String businessDomainKeyWord;
+
+    @Basic
+    @Column(name = "BUSINESS_DOMAIN_GROUP_NAME")
+    private String businessDomainGroupName;
 }

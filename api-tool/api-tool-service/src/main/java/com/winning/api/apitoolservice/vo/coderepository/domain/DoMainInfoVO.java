@@ -28,4 +28,8 @@ public class DoMainInfoVO {
      * 业务域 关键字
      */
     private String businessDomainKeyWord;
+    /**
+     * 业务域 组名称
+     */
+    private String businessDomainGroupName;
 }

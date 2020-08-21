@@ -50,7 +50,7 @@ public class ApiExportController {
          Map<String,Object> map= Maps.newHashMap();
 
         map.put("groupInfos",groupInfoList);
-        WordUtil.createWord(map,"6.ftl",upload+name+".doc");
+        WordUtil.createWord(map,"codeRepositoryId.ftl",upload+name+".doc");
         WordUtil.downLoadFile(request,upload+name+".doc",response);
         // 删除文件
         WordUtil.DeleteFolder(upload);

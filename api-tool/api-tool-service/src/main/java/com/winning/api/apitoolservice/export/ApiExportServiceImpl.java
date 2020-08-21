@@ -108,9 +108,9 @@ public class ApiExportServiceImpl {
                     }
                     DataTypeCode dataTypeCode= DataTypeCode.getInstance(exportApiParameter.getDataTypeCode());
                     exportApiParameter.setDataTypeCodeName(dataTypeCode.getName());
-                    inputParameters.add(exportApiParameter);
                     if(Objects.equals(apiParameterInformationPO.getParameterTypeCode(), ParameterType.INPUT_PARAMETER.getCode())){
                         //入参
+                        inputParameters.add(exportApiParameter);
                     }else{
                         //出参
                         outParameters.add(exportApiParameter);

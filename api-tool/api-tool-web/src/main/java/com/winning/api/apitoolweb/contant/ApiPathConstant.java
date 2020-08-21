@@ -94,4 +94,10 @@ public class ApiPathConstant {
      * 根据业务域标识、架构类别代码获取当前可用的appId
      */
     public static final String APP_ID_BY_DOMAIN_ID_REPOSITORY_ARCHITECT_TYPE_CODE=PRE+"/codeRepositoryInformation/appIdByDomainId";
+    /**
+     * 入参和出参生成 DTO
+     */
+    public static final String GENERATE_PARAMETER_DTO=PRE+"/parameterDTO/generate";
+
+
 }

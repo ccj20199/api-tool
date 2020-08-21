@@ -49,6 +49,8 @@ public class InfoByGroupIdOutVO {
 
     @ApiModelProperty(value = "创建人", required = true, position = 110)
     private String createBy;
+    @ApiModelProperty(value = "创建人名称", required = true, position = 111)
+    private String createByName;
 
     @ApiModelProperty(value = "创建时间", required = true, position = 120)
     private Date createAt;
