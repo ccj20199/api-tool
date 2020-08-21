@@ -82,16 +82,20 @@ public class GenerateApiParamInfoUtil {
     }
 
     public Map<String,Map<String,Object>> getMapData(List<GenerateApiParameter> apiParameter,
-                           String className) {
+                                                     String className,
+                                                     String description,
+                                                     String parameterType) {
         Map<String,Map<String,Object>> map=Maps.newHashMap();
-        getMap(apiParameter,className,map);
+        getMap(apiParameter,className,map,description,parameterType);
         return map;
 
     }
 
     private void getMap(List<GenerateApiParameter> apiParameter,
-                                                  String className,
-                                                  Map<String,Map<String,Object>> map) {
+                        String className,
+                        Map<String,Map<String,Object>> map,
+                        String description,
+                        String parameterType) {
 
 
         List<Object> list = Lists.newArrayList();
@@ -119,6 +123,8 @@ public class GenerateApiParamInfoUtil {
         }
         Map<String,Object> root = Maps.newHashMap();
         root.put("className", className);
+        root.put("description", description);
+        root.put("parameterType", parameterType);
         root.put("attrs", list);
         map.put(className,root);
         // 其他层
@@ -128,9 +134,10 @@ public class GenerateApiParamInfoUtil {
                 case DATA_LIST:
                     List<GenerateApiParameter> parameterVOS = dto.getParameterVOS();
                     String parameterNo = dto.getParameterNo();
-                    String clazzName = parameterNo.substring(0, 1).toUpperCase() + parameterNo.substring(1)+"DTO";
-                    // 添加 类名
-                    getMap(parameterVOS,clazzName,map);
+                    String clazzName = parameterNo.substring(0, 1).toUpperCase() + parameterNo.substring(1)+"DTO";;
+                    String descriptionStr=dto.getParameterName();
+                    // 添加 类名 描述
+                    getMap(parameterVOS,clazzName,map,descriptionStr,"0");
                     break;
                 default:
                     break;
