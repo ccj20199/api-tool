@@ -1,10 +1,8 @@
 package com.winning.api.apitoolservice.util;
 
-import cn.hutool.core.collection.CollectionUtil;
-import cn.hutool.core.collection.ListUtil;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import com.winning.api.apitoolcommon.Attr;
+import com.winning.api.apitoolservice.vo.generateparameter.Attr;
 import com.winning.api.apitoolservice.enumpack.DataTypeCode;
 import com.winning.api.apitoolservice.vo.generateparameter.GenerateApiParameter;
 import org.springframework.stereotype.Component;
@@ -100,14 +98,22 @@ public class GenerateApiParamInfoUtil {
         // 第一层
         for (GenerateApiParameter generateApiParameter : apiParameter) {
             DataTypeCode instance = DataTypeCode.getInstance(generateApiParameter.getDataTypeCode());
+            Attr attr=new Attr();
+            attr.setField(generateApiParameter.getParameterNo());
+            attr.setDataTypeCode(generateApiParameter.getDataTypeCode()+"");
+            attr.setName(generateApiParameter.getParameterName());
+            attr.setRequiredCode(generateApiParameter.getRequiredCode()+"");
             switch (instance){
                 case DATA_LIST:
                     String parameterNo = generateApiParameter.getParameterNo();
                     String clazzName = parameterNo.substring(0, 1).toUpperCase() + parameterNo.substring(1)+"DTO";
-                    list.add(new Attr(generateApiParameter.getParameterNo(), instance.getName()+"<"+clazzName+">"));
+                    attr.setType(instance.getName()+"<"+clazzName+">");
+                    list.add(attr);
                     break;
                 default:
-                    list.add(new Attr(generateApiParameter.getParameterNo(), instance.getName()));
+
+                    attr.setType(instance.getName());
+                    list.add(attr);
                     break;
             }
         }
