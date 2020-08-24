@@ -1,9 +1,11 @@
 package com.winning.api.apitoolservice.util;
 
+import cn.hutool.core.util.StrUtil;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import com.winning.api.apitoolservice.vo.generateparameter.Attr;
+import com.winning.api.apitoolcommon.BusinessException;
 import com.winning.api.apitoolservice.enumpack.DataTypeCode;
+import com.winning.api.apitoolservice.vo.generateparameter.Attr;
 import com.winning.api.apitoolservice.vo.generateparameter.GenerateApiParameter;
 import org.springframework.stereotype.Component;
 
@@ -110,6 +112,9 @@ public class GenerateApiParamInfoUtil {
             switch (instance){
                 case DATA_LIST:
                     String parameterNo = generateApiParameter.getParameterNo();
+                    if(StrUtil.isBlank(parameterNo)){
+                        throw new BusinessException("参数编码编码不为空");
+                    }
                     String clazzName = parameterNo.substring(0, 1).toUpperCase() + parameterNo.substring(1)+"DTO";
                     attr.setType(instance.getName()+"<"+clazzName+">");
                     list.add(attr);
@@ -134,6 +139,9 @@ public class GenerateApiParamInfoUtil {
                 case DATA_LIST:
                     List<GenerateApiParameter> parameterVOS = dto.getParameterVOS();
                     String parameterNo = dto.getParameterNo();
+                    if(StrUtil.isBlank(parameterNo)){
+                        throw new BusinessException("参数编码编码不为空");
+                    }
                     String clazzName = parameterNo.substring(0, 1).toUpperCase() + parameterNo.substring(1)+"DTO";;
                     String descriptionStr=dto.getParameterName();
                     // 添加 类名 描述
