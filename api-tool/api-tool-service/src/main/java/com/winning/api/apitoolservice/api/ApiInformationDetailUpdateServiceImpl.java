@@ -14,7 +14,6 @@ import com.winning.api.apitoolentity.CodeRepositoryInformationPO;
 import com.winning.api.apitoolservice.enumpack.ApiState;
 import com.winning.api.apitoolservice.enumpack.HangUpStatus;
 import com.winning.api.apitoolservice.enumpack.ParameterType;
-
 import com.winning.api.apitoolservice.vo.apiinfo.delete.DeleteHangUpInputVO;
 import com.winning.api.apitoolservice.vo.apiinfo.edit.EditHangUpInputVO;
 import com.winning.api.apitoolservice.vo.apiinfo.edit.EditHangUpOutVO;
@@ -64,6 +63,10 @@ public class ApiInformationDetailUpdateServiceImpl {
     public NewHangUpOutVO hangUp(NewHangUpInputVO inputVO) {
 
         NewHangUpOutVO outVO =new NewHangUpOutVO();
+        // 校验
+        List<ParameterVO> inputParameterList = inputVO.getInputParameterList();
+        List<ParameterVO> outputParameterList = inputVO.getOutputParameterList();
+        checkApiParameter(inputParameterList, outputParameterList);
         // 1.查询 API_INFORMATION_DETAIL，判断是否存在【API名称】或【API的URL】，如果存在则报错。
         int count= apiInformationDetailRepository.countByApiInfo(inputVO.getApiName(),inputVO.getApiUrl());
         if(count>0){
@@ -89,9 +92,9 @@ public class ApiInformationDetailUpdateServiceImpl {
         apiInformationDetailUpdateRepository.save(po);
 
         // api参数列表(入参) 树形结构
-        saveParameter(apiUpdateId, inputVO.getInputParameterList(),0L, ParameterType.INPUT_PARAMETER.getCode());
+        saveParameter(apiUpdateId, inputParameterList,0L, ParameterType.INPUT_PARAMETER.getCode());
         // api参数列表(出参) 树形结构
-        saveParameter(apiUpdateId, inputVO.getOutputParameterList(),0L, ParameterType.OUT_PARAMETER.getCode());
+        saveParameter(apiUpdateId, outputParameterList,0L, ParameterType.OUT_PARAMETER.getCode());
 
         outVO.setApiUpdateId(apiUpdateId);
         outVO.setApiNo(apiNo);
@@ -106,6 +109,25 @@ public class ApiInformationDetailUpdateServiceImpl {
         codeRepositoryInformationRepository.updateApiNoById(codeRepositoryInformationPO.getCodeRepositoryId(),currApiNoUpdate);
 
         return outVO;
+    }
+
+    private void checkApiParameter(List<ParameterVO> inputParameterList, List<ParameterVO> outputParameterList) {
+        if(CollectionUtil.isNotEmpty(inputParameterList)){
+
+            inputParameterList.forEach(e->{
+                if(StrUtil.isBlank(e.getParameterNo())){
+                    throw new BusinessException("入参的参数编码不能为空");
+                }
+            });
+        }
+        if(CollectionUtil.isNotEmpty(outputParameterList)){
+
+            outputParameterList.forEach(e->{
+                if(StrUtil.isBlank(e.getParameterNo())){
+                    throw new BusinessException("出参的参数编码不能为空");
+                }
+            });
+        }
     }
 
     private CodeRepositoryInformationPO getCodeRepositoryInformationPO(NewHangUpInputVO inputVO) {
@@ -163,6 +185,7 @@ public class ApiInformationDetailUpdateServiceImpl {
 
         EditHangUpOutVO outVO=new EditHangUpOutVO();
         Long apiUpdateId= inputVO.getApiUpdateId();
+        checkApiParameter(inputVO.getInputParameterList(),inputVO.getOutputParameterList());
         //更新挂起的api表
         Optional<ApiInformationDetailUpdatePO> optional= apiInformationDetailUpdateRepository.findById(apiUpdateId);
         if(!optional.isPresent()){
