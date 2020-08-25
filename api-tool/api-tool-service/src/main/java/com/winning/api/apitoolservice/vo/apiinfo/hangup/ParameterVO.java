@@ -15,6 +15,10 @@ import java.util.List;
 public class ParameterVO {
 
     /**
+     * API的参数标识
+     */
+    private Long apiParameterId;
+    /**
      * 参数编码
      */
     private String parameterNo;

@@ -161,7 +161,12 @@ public class ApiInformationDetailUpdateServiceImpl {
             for (ParameterVO parameterVO : inputParameterList) {
 
                 ApiParameterInformationUpdatePO parameterPO=new ApiParameterInformationUpdatePO();
-                long parameterId = getSnowflakeId();
+                long parameterId;
+                if(Objects.nonNull(parameterVO.getApiParameterId())){
+                    parameterId=parameterVO.getApiParameterId();
+                }else{
+                    parameterId = getSnowflakeId();
+                }
                 BeanUtil.copyProperties(parameterVO, parameterPO);
                 //主键id
                 parameterPO.setApiParameterId(parameterId);

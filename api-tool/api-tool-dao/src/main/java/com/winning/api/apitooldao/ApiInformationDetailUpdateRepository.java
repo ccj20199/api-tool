@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 import javax.transaction.Transactional;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 /**
  * <p>api-tool</p>
@@ -97,4 +98,9 @@ public interface ApiInformationDetailUpdateRepository extends JpaRepository<ApiI
             "and po.isDel=?2")
     List<ApiInformationDetailUpdatePO> listByGroupId(List<Long> groupId, Integer isDelYes);
 
+    @Query(value="SELECT a.API_UPDATE_ID apiUpdateId,a.API_CHANGE_ID apiChangeId ," +
+            "b.API_CHANGE_REASON apiChangeReason, b.API_CHANGE_AT apiChangeAt,b.API_CHANGE_BY apiChangeBy" +
+            "  FROM API_INFORMATION_DETAIL_UPDATE a   INNER JOIN  API_CHANGE_LOG b  on a.API_CHANGE_ID=b.API_CHANGE_ID" +
+            " WHERE  a.API_ID=?1 ",nativeQuery =true)
+    List<Map<String,Object>> listByApiId(Long apiId);
 }

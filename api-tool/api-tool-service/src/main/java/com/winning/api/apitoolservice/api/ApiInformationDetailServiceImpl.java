@@ -231,9 +231,12 @@ public class ApiInformationDetailServiceImpl {
         //api参数插入
         List<ApiParameterInformationPO> parameterInformationPOList= apiParameterInformationRepository.listByApiId(inputVO.getApiId());
         for (ApiParameterInformationPO apiParameterInformationPO : parameterInformationPOList) {
+            // 签出的时候 插入api入参和出参 参数
+            Long apiParameterId=getSnowflakeId();
             ApiParameterInformationUpdatePO informationUpdatePO=new ApiParameterInformationUpdatePO();
             BeanUtil.copyProperties(apiParameterInformationPO,informationUpdatePO);
             informationUpdatePO.setApiUpdateId(apiUpdateId);
+            informationUpdatePO.setApiParameterId(apiParameterId);
             apiParameterInformationUpdateRepository.save(informationUpdatePO);
         }
 

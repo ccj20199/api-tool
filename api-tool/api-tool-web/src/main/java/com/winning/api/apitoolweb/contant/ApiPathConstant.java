@@ -99,5 +99,10 @@ public class ApiPathConstant {
      */
     public static final String GENERATE_PARAMETER_DTO=PRE+"/parameterDTO/generate";
 
+    /**
+     * 3.1.10 根据API标识查询历史版本信息
+     */
+    public static final String SEARCH_HISTORY_INFO=PRE+"/history/search/info";
+
 
 }
