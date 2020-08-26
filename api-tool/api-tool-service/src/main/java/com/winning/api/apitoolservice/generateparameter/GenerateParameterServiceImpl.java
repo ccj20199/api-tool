@@ -3,7 +3,6 @@ package com.winning.api.apitoolservice.generateparameter;
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.collection.CollectionUtil;
 import com.google.common.collect.Lists;
-import com.google.common.collect.Maps;
 import com.winning.api.apitoolcommon.BusinessException;
 import com.winning.api.apitooldao.ApiInformationDetailRepository;
 import com.winning.api.apitooldao.ApiParameterInformationRepository;
@@ -12,6 +11,7 @@ import com.winning.api.apitoolentity.ApiParameterInformationPO;
 import com.winning.api.apitoolservice.enumpack.ParameterType;
 import com.winning.api.apitoolservice.util.GenerateApiParamInfoUtil;
 import com.winning.api.apitoolservice.vo.generateparameter.GenerateApiParameter;
+import com.winning.api.apitoolservice.vo.generateparameter.GenerateDTO;
 import com.winning.api.apitoolservice.vo.generateparameter.GenerateParameterInputVO;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.text.CaseUtils;
@@ -19,7 +19,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 
@@ -40,7 +39,7 @@ public class GenerateParameterServiceImpl {
     private GenerateApiParamInfoUtil apiParamInfoUtil;
     @Autowired
     private ApiInformationDetailRepository apiInformationDetailRepository;
-    public Map<String, Map<String, Object>> generateParameterDto(GenerateParameterInputVO inputVO) {
+    public List<GenerateDTO>  generateParameterDto(GenerateParameterInputVO inputVO) {
         Optional<ApiInformationDetailPO> optional = apiInformationDetailRepository.findById(inputVO.getApiId());
         if(!optional.isPresent()){
             throw  new BusinessException("当前api没有查询到对应的api信息");
@@ -48,7 +47,7 @@ public class GenerateParameterServiceImpl {
         String apiUrl = optional.get().getApiUrl();
         List<ApiParameterInformationPO> apiParameterInformationPOS = apiParameterInformationRepository.listByApiId(inputVO.getApiId(), inputVO.getParameterTypeCode());
         if(CollectionUtil.isEmpty(apiParameterInformationPOS)){
-            return Maps.newHashMap();
+            return Lists.newArrayList();
         }
         List<GenerateApiParameter> list= Lists.newArrayList();
         apiParameterInformationPOS.forEach(e->{
@@ -81,8 +80,8 @@ public class GenerateParameterServiceImpl {
             s+="OutDTO";
             apiName+="出参";
         }
-        Map<String, Map<String, Object>> mapData = apiParamInfoUtil.getMapData(apiParameter, s,apiName,parameterType);
+        List<GenerateDTO> generateDTOS = apiParamInfoUtil.getMapData(apiParameter, s,apiName,parameterType);
 
-        return  mapData;
+        return  generateDTOS;
     }
 }

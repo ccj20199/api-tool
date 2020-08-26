@@ -1,10 +1,10 @@
 package com.winning.api.apitoolweb.controller;
 
 import com.google.common.collect.Lists;
-import com.google.common.collect.Maps;
 import com.winning.api.apitoolcommon.BusinessException;
 import com.winning.api.apitoolcommon.ResponseResult;
 import com.winning.api.apitoolservice.generateparameter.GenerateParameterServiceImpl;
+import com.winning.api.apitoolservice.vo.generateparameter.GenerateDTO;
 import com.winning.api.apitoolservice.vo.generateparameter.GenerateParameterInputVO;
 import com.winning.api.apitoolservice.vo.generateparameter.GenerateParameterOutVO;
 import com.winning.api.apitoolweb.contant.ApiPathConstant;
@@ -23,7 +23,6 @@ import javax.validation.Valid;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.util.List;
-import java.util.Map;
 
 /**
  * <p>api-tool</p>
@@ -43,7 +42,7 @@ public class GenerateParameterController {
     @ApiOperation(nickname = "入参和出参生成 DTO", value = "入参和出参生成 DTO")
     @PostMapping(ApiPathConstant.GENERATE_PARAMETER_DTO)
     public ResponseResult generateParameterDto(@Valid @RequestBody GenerateParameterInputVO inputVO) {
-        Map<String, Map<String, Object>> mapMap = generateParameterService.generateParameterDto(inputVO);
+        List<GenerateDTO> generateDTOS = generateParameterService.generateParameterDto(inputVO);
         List<GenerateParameterOutVO> result= Lists.newArrayList();
         try {
             // 创建配置实例
@@ -56,18 +55,18 @@ public class GenerateParameterController {
             configuration.setClassForTemplateLoading(GenerateParameterController.class,"/template");
             // 获取模板
             Template template = configuration.getTemplate("javaBean.ftl");
-            mapMap.forEach((key, root) -> {
+            generateDTOS.forEach(dto -> {
 
                 StringWriter out = new StringWriter();
                 try {
-                    template.process(root, out);
+                    template.process(dto.getMap(), out);
                 } catch (TemplateException e) {
                     throw new BusinessException("异常信息："+e.getMessage());
                 } catch (IOException e) {
                     throw new BusinessException("异常信息："+e.getMessage());
                 }
                 GenerateParameterOutVO outVO=new GenerateParameterOutVO();
-                outVO.setClassName(key+".java");
+                outVO.setClassName(dto.getClassName()+".java");
                 outVO.setContent(out.toString());
                 result.add(outVO);
             });

@@ -7,6 +7,7 @@ import com.winning.api.apitoolcommon.BusinessException;
 import com.winning.api.apitoolservice.enumpack.DataTypeCode;
 import com.winning.api.apitoolservice.vo.generateparameter.Attr;
 import com.winning.api.apitoolservice.vo.generateparameter.GenerateApiParameter;
+import com.winning.api.apitoolservice.vo.generateparameter.GenerateDTO;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -83,19 +84,20 @@ public class GenerateApiParamInfoUtil {
         return childs;
     }
 
-    public Map<String,Map<String,Object>> getMapData(List<GenerateApiParameter> apiParameter,
+    public List<GenerateDTO> getMapData(List<GenerateApiParameter> apiParameter,
                                                      String className,
                                                      String description,
                                                      String parameterType) {
-        Map<String,Map<String,Object>> map=Maps.newHashMap();
-        getMap(apiParameter,className,map,description,parameterType);
-        return map;
+
+        List<GenerateDTO> generateDTOS=Lists.newArrayList();
+        getMap(apiParameter,className,generateDTOS,description,parameterType);
+        return generateDTOS;
 
     }
 
     private void getMap(List<GenerateApiParameter> apiParameter,
                         String className,
-                        Map<String,Map<String,Object>> map,
+                        List<GenerateDTO> generateDTOS,
                         String description,
                         String parameterType) {
 
@@ -131,7 +133,10 @@ public class GenerateApiParamInfoUtil {
         root.put("description", description);
         root.put("parameterType", parameterType);
         root.put("attrs", list);
-        map.put(className,root);
+        GenerateDTO generateDTO=new GenerateDTO();
+        generateDTO.setClassName(className);
+        generateDTO.setMap(root);
+        generateDTOS.add(generateDTO);
         // 其他层
         for (GenerateApiParameter dto : apiParameter) {
             DataTypeCode instance = DataTypeCode.getInstance(dto.getDataTypeCode());
@@ -145,7 +150,7 @@ public class GenerateApiParamInfoUtil {
                     String clazzName = parameterNo.substring(0, 1).toUpperCase() + parameterNo.substring(1)+"DTO";;
                     String descriptionStr=dto.getParameterName();
                     // 添加 类名 描述
-                    getMap(parameterVOS,clazzName,map,descriptionStr,"0");
+                    getMap(parameterVOS,clazzName,generateDTOS,descriptionStr,"0");
                     break;
                 default:
                     break;
