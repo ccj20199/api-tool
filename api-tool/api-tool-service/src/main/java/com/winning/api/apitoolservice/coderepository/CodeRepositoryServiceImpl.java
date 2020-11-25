@@ -9,6 +9,7 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.winning.api.apitoolcommon.BusinessException;
 import com.winning.api.apitoolcommon.contant.Constant;
+import com.winning.api.apitooldao.ApiInformationDetailRepository;
 import com.winning.api.apitooldao.BusinessDomainInformationRepository;
 import com.winning.api.apitooldao.CodeRepositoryGroupRepository;
 import com.winning.api.apitooldao.CodeRepositoryInformationRepository;
@@ -59,6 +60,8 @@ public class CodeRepositoryServiceImpl implements CodeRepositoryService {
     private EntityManager entityManager;
     @Autowired
     private CodeRepositoryGroupRepository codeRepositoryGroupRepository;
+    @Autowired
+    private ApiInformationDetailRepository apiInformationDetailRepository;
 
     @Override
     public AddOutVO add(AddInputVO inputVO) {
@@ -236,14 +239,12 @@ public class CodeRepositoryServiceImpl implements CodeRepositoryService {
                 BeanUtil.copyProperties(e, codeRepositoryVO);
                 List<CodeRepositoryGroupPO> codeRepositoryGroupPOList=finalMap.get(e.getCodeRepositoryId());
                 if(CollectionUtil.isNotEmpty(codeRepositoryGroupPOList)){
-                    codeRepositoryVO.setApiCount(codeRepositoryGroupPOList.size());
+                    List<Long> groupId = codeRepositoryGroupPOList.stream().map(k -> k.getGroupId()).collect(Collectors.toList());
+                    Integer apiCount = apiInformationDetailRepository.countByGroupIds(groupId);
+                    codeRepositoryVO.setApiCount(apiCount);
                 }
                 data.add(codeRepositoryVO);
             });
-
-
-
-
             SearchByIdOutVO queryAllOutVO=new SearchByIdOutVO();
             queryAllOutVO.setData(data);
             return  queryAllOutVO;
