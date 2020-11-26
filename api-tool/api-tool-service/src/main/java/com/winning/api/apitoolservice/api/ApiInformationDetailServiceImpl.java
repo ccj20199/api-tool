@@ -237,10 +237,8 @@ public class ApiInformationDetailServiceImpl {
             informationUpdatePO.setApiUpdateId(apiUpdateId);
             apiParameterInformationUpdateRepository.save(informationUpdatePO);
         }
-
         // 更新 ApiInformationDetailPO
         apiInformationDetailRepository.updateById(inputVO.getApiId(),inputVO.getCheckOutBy(),DateTime.now());
-
         outInfoOutVO.setApiUpdateId(apiUpdateId);
         return outInfoOutVO;
     }
